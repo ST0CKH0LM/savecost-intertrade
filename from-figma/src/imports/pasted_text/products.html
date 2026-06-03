@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>สินค้า - Savecost Intertrade</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .editorial-gradient {
+            background: linear-gradient(135deg, #005ea3 0%, #0077cc 100%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#fdfcff",
+                        "surface-container-low": "#eef4fd",
+                        "surface": "#f6f9ff",
+                        "secondary-fixed-dim": "#bac9d3",
+                        "primary": "#005ea3",
+                        "surface-container": "#e8eef7",
+                        "on-secondary-fixed-variant": "#3b4951",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c0c7d4",
+                        "tertiary-fixed": "#d3e4ff",
+                        "on-secondary-fixed": "#0f1d25",
+                        "on-primary-fixed-variant": "#00487f",
+                        "surface-dim": "#d4dbe3",
+                        "primary-fixed-dim": "#a1c9ff",
+                        "inverse-on-surface": "#ebf1fa",
+                        "on-tertiary-fixed": "#001c38",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#151c22",
+                        "on-tertiary-fixed-variant": "#004881",
+                        "secondary-fixed": "#d6e5ef",
+                        "primary-fixed": "#d2e4ff",
+                        "surface-container-high": "#e2e9f1",
+                        "background": "#f6f9ff",
+                        "on-surface": "#151c22",
+                        "secondary": "#526069",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#dce3ec",
+                        "tertiary-container": "#0677ce",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#0061a7",
+                        "primary-container": "#0077cc",
+                        "on-surface-variant": "#404752",
+                        "inverse-surface": "#2a3138",
+                        "on-primary-container": "#fdfcff",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#001c37",
+                        "surface-container-highest": "#dce3ec",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#a1c9ff",
+                        "outline": "#707783",
+                        "tertiary": "#005ea5",
+                        "secondary-container": "#d3e2ed",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#56656e",
+                        "tertiary-fixed-dim": "#a2c9ff",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f6f9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed antialiased">
+<header class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-950/70 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 shadow-sm">
+<nav class="grid grid-cols-3 items-center px-8 py-4 max-w-7xl mx-auto">
+<!-- Brand Identity (Left) -->
+<div class="flex justify-start">
+<a class="flex items-center" href="#">
+<img alt="SaveCost Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0ui3VhdaqAL7AJ2v1zXyrx9zh0eEDYoztCXd1n6_FqrStD9Hd5pw7bPtfjiMcFgYEjQmRRA1Q2jdUflEGtH3D0OGQGD7T_ENip79YaFNaLIWWtVfk4qVsiVfJUjidRbb5jsLQPa4roDTqDPY3kJeAlX5aFJqGIUDwbDWgky5pPVTHVSARGzzuuoC4V16MZU4hiGed3YMIhQsmgK5N0dAyNEgdap7ppaqEFfNWTUUFXK3-La9md_EOh4HI4y5yLWhiNvXrSrXBqQl4w"/>
+</a>
+</div>
+<!-- Desktop Navigation Links (Center) -->
+<div class="hidden md:flex justify-center items-center gap-8">
+<a class="font-['Inter'] font-medium text-sm tracking-tight text-slate-600 dark:text-slate-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300" href="#">หน้าหลัก</a>
+<a class="font-['Inter'] font-medium text-sm tracking-tight text-slate-600 dark:text-slate-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300" href="#">เกี่ยวกับเรา</a>
+<a class="font-['Inter'] font-medium text-sm tracking-tight text-blue-700 dark:text-blue-400 border-b-2 border-blue-700 pb-1 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300" href="#">สินค้า</a>
+<a class="font-['Inter'] font-medium text-sm tracking-tight text-slate-600 dark:text-slate-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300" href="#">บริการของเรา</a>
+<a class="font-['Inter'] font-medium text-sm tracking-tight text-slate-600 dark:text-slate-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300" href="#">ติดต่อเรา</a>
+</div>
+<!-- Trailing Primary Action (Right) -->
+<div class="flex justify-end items-center gap-4">
+<button class="bg-primary hover:bg-primary-container text-on-primary font-['Inter'] font-medium text-sm tracking-tight px-5 py-2.5 rounded-xl shadow-md transition-all duration-300 active:opacity-80 active:scale-95">ขอใบเสนอราคา</button>
+<button class="md:hidden p-2 text-on-surface-variant">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="pt-24 pb-20">
+<section class="max-w-7xl mx-auto px-8 mb-16">
+<div class="relative overflow-hidden rounded-xl bg-surface-container h-[300px] flex items-center">
+<div class="absolute inset-0 z-0 opacity-20">
+<img alt="Industrial Engineering" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0j20SXnd9Ohvb001_1p43UfhCqK8yMvcGyTGwLQY5wMM4hu2b8R9o4WlAc-DA9nnOWU8qnSrpcGivtXbhXgHjWdpzyD4wwqEW9vt7QrnMHUcMT2ZdOna0xZ40Bj14ll_QWz7bX44LKWNuBiKpAhs2lMQk4uv4dPK0v3RTRqRN6FrKfJg7dYrT3N25FT5ulBUiIdnwRIiQD50e3I-kpEoFunYOasDTEHVNhghkktBjqIVv_Kw4rXEFZ73Pxdn4xaigCakqqhpHAvA"/>
+</div>
+<div class="relative z-10 px-12 max-w-2xl">
+<span class="label-sm text-primary tracking-[0.2em] font-bold uppercase mb-4 block">CATALOG 2024</span>
+<h1 class="text-5xl font-extrabold tracking-tight text-on-surface mb-4">สินค้าของเรา</h1>
+<p class="text-body-lg text-on-surface-variant leading-relaxed">ค้นพบอุปกรณ์อุตสาหกรรมคุณภาพสูงและโซลูชันที่แม่นยำสำหรับการดำเนินงานของคุณ เราคัดสรรเฉพาะแบรนด์ชั้นนำระดับโลก</p>
+</div>
+</div>
+</section>
+<section class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row gap-12">
+<aside class="w-full md:w-64 flex-shrink-0">
+<div class="sticky top-28 space-y-10">
+<div>
+<h3 class="text-title-lg font-bold mb-6 text-on-surface">หมวดหมู่สินค้า</h3>
+<ul class="space-y-3">
+<li><button class="w-full text-left px-4 py-2 rounded-lg bg-primary text-on-primary font-medium transition-all">ทั้งหมด</button></li>
+<li><button class="w-full text-left px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-all">Chemical</button></li>
+<li><button class="w-full text-left px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-all">Grease</button></li>
+<li><button class="w-full text-left px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-all">Spray</button></li>
+<li><button class="w-full text-left px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-all">Filter</button></li>
+</ul>
+</div>
+</div>
+</aside>
+<div class="flex-grow">
+<div class="flex justify-between items-center mb-8">
+<span class="text-on-surface-variant font-medium">พบสินค้า 29 รายการ</span>
+<div class="flex items-center gap-2">
+<span class="text-sm text-on-surface-variant">เรียงโดย:</span>
+<select class="bg-transparent border-none text-sm font-bold text-primary focus:ring-0 cursor-pointer">
+<option>ล่าสุด</option>
+<option>รหัสสินค้า</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Product 1: Scale inhibitor -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-outline-variant/10">
+<div class="relative h-64 bg-white overflow-hidden flex items-center justify-center p-4">
+<img alt="Scale inhibitor" class="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvQNzOuErkJNKQyInDw7qxW18hu6GzfVPtgaAjXUpeQZ5h2Pps9hc3CajSZmROUMS62T-g1905VoY750O_nY3-oei35oouV5qbgTwZlDmxs_GjmRTdI90TZjxIeh3pKLcm3V4cAjEMBFuNo3iBf0FdsTBlKO0ezn7KoFIZu6KPI5UY9mvorHa72jcDI2rHkdTESpUeXbMQWLahWF3JIAaW0vvH2u_1H8MeoFpIjwPjgfUbPBVL35U2mc25XB8d0PgnFDyIvKKnSKk"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-1 rounded-sm uppercase tracking-wider">Chemical</span>
+</div>
+</div>
+<div class="p-6">
+<div class="text-xs font-bold text-primary mb-1">SC-1001</div>
+<h4 class="text-title-md font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">Scale inhibitor</h4>
+<p class="text-label-sm text-on-surface-variant line-clamp-3 mb-6">น้ำยาป้องกันตะกรันและสนิม เป็นน้ำยาป้องกันตะกรันและการกัดกร่อนในระบบคูลลิ่งทาวเวอร์ ปลอดภัยกับโลหะ พลาสติก ซีล และวาล์วต่างๆ น้ำยาจะช่วยปรับค่า pH ของน้ำในระบบ</p>
+<button class="flex items-center gap-2 text-primary font-bold text-sm group/btn">
+                            ดูรายละเอียด
+                            <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Product 2: Multi-purpose grease -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-outline-variant/10">
+<div class="relative h-64 bg-[#f8f8f8] overflow-hidden flex items-center justify-center p-4">
+<img alt="Multi-purpose grease" class="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQuBcRaGAN66hK7nsLUt1ywxqRuH8UC6UmTvjyD8wbYzsaNccdUERHkelqm7KrS5g3_xpnYAIHdbdBem_Xkzwd5npmucI77pcNzyK_YfIk2eIUqjsM_Gj9o0FO307Sf2x3mUSrlLN8HhuqEDBOWfobsxa-0JWkhLAy1F0X22kCctDiPTXzMa8ejRxTZ2HuBWQffMwjymwWTF3xKGIQfEvfLlGw8qw7RlZB2krIRL7c7R285Uzy-d1fuvyXxIAWQ6FmYnw7oKxNRb0"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-1 rounded-sm uppercase tracking-wider">Grease</span>
+</div>
+</div>
+<div class="p-6">
+<div class="text-xs font-bold text-primary mb-1">SC-2001</div>
+<h4 class="text-title-md font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">Multi-purpose grease</h4>
+<p class="text-label-sm text-on-surface-variant line-clamp-3 mb-6">จารบีอเนกประสงค์ เหมาะสำหรับการหล่อลื่นทั่วไป ทนความร้อนและแรงกดได้ดี</p>
+<button class="flex items-center gap-2 text-primary font-bold text-sm group/btn">
+                            ดูรายละเอียด
+                            <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Product 3: Contact cleaner -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-outline-variant/10">
+<div class="relative h-64 bg-white overflow-hidden flex items-center justify-center p-4">
+<img alt="Contact cleaner" class="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD--eKIILmIXLyb2rjizYm7Xjfk4gdXTrDisDQWrPI2ek3TIMSgNdyOJNTlBn_-JK-vw96zsciKpPH31xvibo6mdHsfHuzYQir99ljwjjreW5m168K6TA2o3PT3ICTIyzEiCezslX3lCD-2vVldP7jZdyJ1MWIDL9FnSsWeNuULiw3a7SvvU-jXQtCGECw6lTqLHOghntuvALv5B01M6jRYJCA3quuGcPqUPJCBKounMbhvgYIpbvBzuwuyz5Ti7O1snNjM3aDomQE"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-1 rounded-sm uppercase tracking-wider">Spray</span>
+</div>
+</div>
+<div class="p-6">
+<div class="text-xs font-bold text-primary mb-1">SC-3001</div>
+<h4 class="text-title-md font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">Contact cleaner</h4>
+<p class="text-label-sm text-on-surface-variant line-clamp-3 mb-6">น้ำยาล้างหน้าคอนแทค แห้งเร็ว ไม่ทิ้งคราบ ไม่ทำปฏิกิริยากับพลาสติก ไม่เป็นอันตรายต่อร่างกาย</p>
+<button class="flex items-center gap-2 text-primary font-bold text-sm group/btn">
+                            ดูรายละเอียด
+                            <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Product 4: Sodium chloride -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-outline-variant/10">
+<div class="relative h-64 bg-white overflow-hidden flex items-center justify-center p-4">
+<img alt="Sodium chloride" class="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0j20SXnd9Ohvb001_1p43UfhCqK8yMvcGyTGwLQY5wMM4hu2b8R9o4WlAc-DA9nnOWU8qnSrpcGivtXbhXgHjWdpzyD4wwqEW9vt7QrnMHUcMT2ZdOna0xZ40Bj14ll_QWz7bX44LKWNuBiKpAhs2lMQk4uv4dPK0v3RTRqRN6FrKfJg7dYrT3N25FT5ulBUiIdnwRIiQD50e3I-kpEoFunYOasDTEHVNhghkktBjqIVv_Kw4rXEFZ73Pxdn4xaigCakqqhpHAvA"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-1 rounded-sm uppercase tracking-wider">Filter</span>
+</div>
+</div>
+<div class="p-6">
+<div class="text-xs font-bold text-primary mb-1">SC-5001</div>
+<h4 class="text-title-md font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">Sodium chloride</h4>
+<p class="text-label-sm text-on-surface-variant line-clamp-3 mb-6">เกลืออุตสาหกรรมสำหรับทำความสะอาดสารกรองน้ำ</p>
+<button class="flex items-center gap-2 text-primary font-bold text-sm group/btn">
+                            ดูรายละเอียด
+                            <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Product 5: Biocide -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-outline-variant/10">
+<div class="relative h-64 bg-white overflow-hidden flex items-center justify-center p-4">
+<img alt="Biocide" class="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt5doo6IdHg8Z4mFCGimNOy_Agkm6muS-dPE-6jDQMId4G7n6lbthgx3hBpMDRtTkwjh3GnfLRd-ZkL1GJMi4CdQTCsmi7gUizbdl4nyhVOSWuYAwAUpBhXdpiqpniUdt38CpAmz9ayeJLQY4YccnC8A11OccsBSRDGdAraRFX1-xRHApdy9Ex4FfIUeOovMH18Z54pYI8BQ39T-8RdK6HyP-eTf_O_X-c5HDThvHD1BsY4E0bxHu7eKQY5N_9FvGClNJbaI0oW-Y"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-1 rounded-sm uppercase tracking-wider">Chemical</span>
+</div>
+</div>
+<div class="p-6">
+<div class="text-xs font-bold text-primary mb-1">SC-1002</div>
+<h4 class="text-title-md font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">Biocide</h4>
+<p class="text-label-sm text-on-surface-variant line-clamp-3 mb-6">น้ำยาฆ่าเชื้อแบคทีเรีย เชื้อรา และตะไคร่น้ำ ในระบบน้ำหล่อเย็น ใช้งานง่าย ปลอดภัย และมีประสิทธิภาพสูง</p>
+<button class="flex items-center gap-2 text-primary font-bold text-sm group/btn">
+                            ดูรายละเอียด
+                            <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Product 6: Ion exchange resins -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-outline-variant/10">
+<div class="relative h-64 bg-white overflow-hidden flex items-center justify-center p-4">
+<img alt="Ion exchange resins" class="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd8R1fItt5FO1Hr5wpF0isVfokUVX08uIkhP4wO-7x11hWDVo4yj_KUNSjusO6RGDVhbrY59FVbG3N3Ecpi5tTiZMyVM2JnHDPjy7XdlTodbrsndKNq3fMvBRr44g4kNPqenn28bR39-aKF42Fqan5NBxhLftFczXgycpU36jXeYcJqD4a5KDEyUUD1-ny1UaRzafmDsawz0Itb3vbeGtruCKxLp5gU9K-fUiKQca4X09wcmH_zpZtqcWgorb1Jr79YDPiGj8gQxA"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-1 rounded-sm uppercase tracking-wider">Filter</span>
+</div>
+</div>
+<div class="p-6">
+<div class="text-xs font-bold text-primary mb-1">SC-5002</div>
+<h4 class="text-title-md font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">Ion exchange resins</h4>
+<p class="text-label-sm text-on-surface-variant line-clamp-3 mb-6">สารกรองน้ำเรซิ่น สามารถกำจัดความกระด้าง, หินปูน, แคลเซียม, แมกนีเซียมและจุดขุ่นสี เหมาะสำหรับการทำน้ำอ่อน</p>
+<button class="flex items-center gap-2 text-primary font-bold text-sm group/btn">
+                            ดูรายละเอียด
+                            <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-16 flex justify-center items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-on-primary font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container transition-all">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container transition-all">3</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full mt-auto border-t bg-white border-slate-200">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 w-full max-w-screen-2xl mx-auto">
+<!-- Column 1: Brand Identity -->
+<div class="space-y-6">
+<div class="flex items-center gap-2">
+<img alt="SAVECOST INTERTRADE" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0ui3VhdaqAL7AJ2v1zXyrx9zh0eEDYoztCXd1n6_FqrStD9Hd5pw7bPtfjiMcFgYEjQmRRA1Q2jdUflEGtH3D0OGQGD7T_ENip79YaFNaLIWWtVfk4qVsiVfJUjidRbb5jsLQPa4roDTqDPY3kJeAlX5aFJqGIUDwbDWgky5pPVTHVSARGzzuuoC4V16MZU4hiGed3YMIhQsmgK5N0dAyNEgdap7ppaqEFfNWTUUFXK3-La9md_EOh4HI4y5yLWhiNvXrSrXBqQl4w"/>
+</div>
+<p class="font-inter text-sm leading-relaxed text-on-surface-variant">ผู้นำเข้าและจัดจำหน่ายอุปกรณ์อุตสาหกรรมครบวงจร มุ่งเน้นคุณภาพและการบริการที่เหนือระดับเพื่อความสำเร็จของธุรกิจคุณ</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:text-blue-400 transition-colors">social_leaderboard</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-blue-400 transition-colors">language</span>
+</div>
+</div>
+<!-- Column 2: Navigation Links -->
+<div>
+<h4 class="font-bold mb-6">เมนู</h4>
+<ul class="space-y-4 font-inter text-sm">
+<li><a class="hover:text-blue-400 hover:translate-x-1 transition-transform duration-200 block" href="#">หน้าหลัก</a></li>
+<li><a class="hover:text-blue-400 hover:translate-x-1 transition-transform duration-200 block" href="#">เกี่ยวกับเรา</a></li>
+<li><a class="hover:text-blue-400 hover:translate-x-1 transition-transform duration-200 block" href="#">สินค้า</a></li>
+<li><a class="hover:text-blue-400 hover:translate-x-1 transition-transform duration-200 block" href="#">บริการของเรา</a></li>
+<li><a class="hover:text-blue-400 hover:translate-x-1 transition-transform duration-200 block" href="#">ติดต่อเรา</a></li>
+</ul>
+</div>
+<!-- Column 3: Contact Information -->
+<div>
+<h4 class="font-bold mb-6">ข้อมูลการติดต่อ</h4>
+<ul class="space-y-4 font-inter text-sm">
+<li class="flex items-center gap-3 group">
+<span class="material-symbols-outlined text-primary">mail</span>
+<span class="group-hover:text-primary transition-colors">info@savecost.co.th</span>
+</li>
+<li class="flex items-center gap-3 group">
+<span class="material-symbols-outlined text-primary">phone</span>
+<span class="group-hover:text-primary transition-colors">+66 (0) 2-002-3636</span>
+</li>
+<li class="flex items-start gap-3 group">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="group-hover:text-primary transition-colors leading-relaxed">
+                        99/42 Moo 4, Bueng Yitho, Thanyaburi,<br/>
+                        Pathum Thani 12130, Thailand
+                    </span>
+</li>
+</ul>
+</div>
+<!-- Column 4: Newsletter -->
+<div class="space-y-6">
+<h4 class="font-bold mb-6">จดหมายข่าว</h4>
+<p class="font-inter text-sm">รับข่าวสารสินค้าใหม่และโปรโมชั่นพิเศษก่อนใคร</p>
+<div class="flex flex-col gap-2">
+<input class="w-full rounded-lg px-4 py-2 text-sm placeholder-slate-400 focus:ring-2 focus:ring-primary outline-none bg-slate-50 text-slate-900 border border-slate-200" placeholder="อีเมลของคุณ" type="email"/>
+<button class="text-white py-2 rounded-lg text-sm font-bold hover:bg-blue-700 transition-colors bg-primary">สมัครรับข่าวสาร</button>
+</div>
+</div>
+</div>
+<!-- Footer Bottom: Legal & Copyright -->
+<div class="py-8 px-12 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 w-full max-w-screen-2xl mx-auto text-on-surface-variant">
+<p class="font-inter text-sm">© 2024 Savecost Intertrade Co., Ltd. All Rights Reserved.</p>
+<div class="flex gap-8">
+<a class="hover:text-primary text-sm transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary text-sm transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary text-sm transition-colors" href="#">Cookie Policy</a>
+</div>
+</div>
+</footer>
+</body></html>
