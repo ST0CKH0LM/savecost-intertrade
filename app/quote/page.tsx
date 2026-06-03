@@ -51,7 +51,7 @@ export default function QuotePage() {
           </div>
           <div className="mt-8 flex gap-4 rounded-xl bg-slate-950 p-5 text-white">
             <PackageSearch className="flex-shrink-0 text-[#2da3e6]" size={24} />
-            <p className="text-slate-300">ถ้ายังไม่ทราบรุ่นที่แน่นอน ส่งรูปหน้างานหรือรายละเอียดการใช้งานมาก่อนได้</p>
+            <p className="text-slate-300">หากยังไม่ทราบรุ่นสินค้าที่แน่นอน สามารถส่งรูปหน้างานหรือรายละเอียดการใช้งานให้ทีมงานช่วยประเมินเบื้องต้นได้</p>
           </div>
         </aside>
       </div>
