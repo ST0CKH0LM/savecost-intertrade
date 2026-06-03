@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Download, FlaskConical, ShieldCheck, SprayCan, Waves } from "lucide-react";
 import { catalogCategories, catalogProducts, categoryLabels, type ProductCategory } from "@/lib/catalog";
+import { publicPath } from "@/lib/site-paths";
 
 const categoryMeta: Record<ProductCategory, { icon: React.ComponentType<{ size?: number; className?: string }>; note: string }> = {
   Chemical: {
@@ -45,7 +46,7 @@ export default function ProductsPage() {
                 <Link className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#005ea3] px-5 py-3 font-bold text-white shadow-lg transition-colors hover:bg-[#0077cc] sm:w-auto" href="/quote">
                   ขอใบเสนอราคา <ArrowRight size={18} />
                 </Link>
-                <a className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 font-bold text-slate-950 transition-colors hover:bg-slate-100 sm:w-auto" href="/catalog/savecost-catalog-2024.pdf" target="_blank">
+                <a className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 font-bold text-slate-950 transition-colors hover:bg-slate-100 sm:w-auto" href={publicPath("/catalog/savecost-catalog-2024.pdf")} target="_blank">
                   ดาวน์โหลด Catalog <Download size={18} />
                 </a>
               </div>

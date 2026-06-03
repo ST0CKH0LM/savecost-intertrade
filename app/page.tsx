@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle, Clock, Download, ShieldCheck, Truck } from "lucide-react";
 import { catalogProducts } from "@/lib/catalog";
+import { publicPath } from "@/lib/site-paths";
 
 const featured = [
   {
@@ -143,7 +144,7 @@ export default function HomePage() {
                 เริ่มจากรายการยอดนิยมในหมวดเคมีภัณฑ์และสินค้าซ่อมบำรุง พร้อมดูทั้งหมดได้ในหน้า catalog
               </p>
             </div>
-            <a className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-5 py-3 font-bold text-slate-700 transition-colors hover:bg-slate-50" href="/catalog/savecost-catalog-2024.pdf" target="_blank">
+            <a className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-5 py-3 font-bold text-slate-700 transition-colors hover:bg-slate-50" href={publicPath("/catalog/savecost-catalog-2024.pdf")} target="_blank">
               ดาวน์โหลด PDF <Download size={18} />
             </a>
           </div>

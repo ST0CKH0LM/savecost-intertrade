@@ -1,4 +1,14 @@
+const isGitHubPages = process.env.GITHUB_PAGES === "true";
+const repoName = "savecost-intertrade";
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  output: "export",
+  basePath: isGitHubPages ? `/${repoName}` : "",
+  images: {
+    unoptimized: true,
+  },
+  trailingSlash: true,
+};
 
 export default nextConfig;
