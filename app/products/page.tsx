@@ -31,7 +31,7 @@ export default function ProductsPage() {
             <img
               alt="Industrial equipment warehouse"
               className="h-full w-full object-cover"
-              src="https://images.unsplash.com/photo-1712190695017-5118107679e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwzfHxpbmR1c3RyaWFsJTIwZXF1aXBtZW50JTIwdG9vbHMlMjB3YXJlaG91c2V8ZW58MXx8fHwxNzc1NDY4ODgwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+              src={publicPath("/images/industrial-hero.png")}
             />
           </div>
           <div className="relative z-10 grid gap-10 lg:grid-cols-[1fr_360px] lg:items-end">
