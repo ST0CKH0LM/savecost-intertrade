@@ -34,7 +34,7 @@ export default function HomePage() {
   return (
     <>
       <section className="relative flex min-h-[870px] items-center overflow-hidden pt-24 max-lg:min-h-0 max-lg:pb-16 max-md:pb-12 max-md:pt-24">
-        <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-8 max-md:gap-10 max-md:px-6 lg:grid-cols-2">
+        <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-8 max-md:px-6 lg:grid-cols-2 lg:gap-12">
           <div className="z-10">
             <h1 className="mb-5 text-5xl font-extrabold leading-tight text-slate-900 max-md:text-center max-md:text-[2.15rem] max-md:leading-[1.24] md:text-6xl">
               คุณภาพมาตรฐาน <br />
@@ -49,7 +49,7 @@ export default function HomePage() {
                 รู้จักเรามากขึ้น
               </Link>
             </div>
-            <div className="mt-9 grid max-w-lg grid-cols-3 gap-3 max-md:mx-auto max-md:max-w-[342px]">
+            <div className="mt-10 hidden max-w-lg grid-cols-3 gap-3 lg:grid">
               <HeroMetric label="โรงงานที่ดูแล" value="30+" />
               <HeroMetric label="เริ่มก่อตั้ง" value="2015" />
               <HeroMetric label="สินค้าใน Catalog" value={`${catalogProducts.length}`} />
@@ -60,6 +60,12 @@ export default function HomePage() {
             <div className="relative z-20 aspect-[4/5] overflow-hidden rounded-xl shadow-2xl max-lg:aspect-[16/9] max-md:aspect-[4/3]">
               <img alt="ทีมงาน Savecost Intertrade กำลังบำรุงรักษาคู⁠ล⁠ลิ่ง⁠ทาวเวอร์" className="h-full w-full object-cover" src={publicPath("/images/work/hero-cooling-tower-maintenance.jpg")} />
             </div>
+          </div>
+
+          <div className="grid max-w-lg grid-cols-3 gap-3 lg:hidden max-md:mx-auto max-md:max-w-[342px]">
+            <HeroMetric label="โรงงานที่ดูแล" value="30+" />
+            <HeroMetric label="เริ่มก่อตั้ง" value="2015" />
+            <HeroMetric label="สินค้าใน Catalog" value={`${catalogProducts.length}`} />
           </div>
         </div>
       </section>

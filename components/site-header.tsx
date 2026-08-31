@@ -24,14 +24,14 @@ export function SiteHeader() {
 
   return (
     <header className="fixed top-0 z-50 w-full border-b border-slate-200/50 bg-white/70 shadow-sm backdrop-blur-md">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 md:grid md:grid-cols-3 md:px-8 md:py-4">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 lg:grid lg:grid-cols-3 lg:px-8 lg:py-4">
         <div className="flex min-w-0 justify-start">
           <Link href="/" className="flex items-center" aria-label="SaveCost home">
-            <SaveCostLogo className="h-10 sm:h-12 md:h-14" />
+            <SaveCostLogo className="h-10 sm:h-12 lg:h-14" />
           </Link>
         </div>
 
-        <div className="hidden items-center justify-center gap-8 md:flex">
+        <div className="hidden items-center justify-center gap-8 lg:flex">
           {navItems.map((item) => {
             const active = currentPath === normalizePath(item.href);
             return (
@@ -46,14 +46,14 @@ export function SiteHeader() {
           <Link href="/quote" className="hidden rounded-xl bg-[#005ea3] px-5 py-2.5 text-sm font-medium text-white shadow-md transition-all duration-300 hover:bg-[#0077cc] active:scale-95 active:opacity-80 sm:inline-flex">
             ขอใบเสนอราคา
           </Link>
-          <button aria-expanded={isOpen} aria-label={isOpen ? "Close navigation" : "Open navigation"} className="p-2 text-slate-600 md:hidden" onClick={() => setIsOpen((current) => !current)} type="button">
+          <button aria-expanded={isOpen} aria-label={isOpen ? "Close navigation" : "Open navigation"} className="p-2 text-slate-600 lg:hidden" onClick={() => setIsOpen((current) => !current)} type="button">
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </nav>
 
       {isOpen ? (
-        <div className="border-t border-slate-200 bg-white px-5 py-4 md:hidden">
+        <div className="border-t border-slate-200 bg-white px-5 py-4 lg:hidden">
           <div className="grid gap-2">
             {navItems.map((item) => {
               const active = currentPath === normalizePath(item.href);
