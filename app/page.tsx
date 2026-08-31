@@ -7,20 +7,17 @@ const featured = [
   {
     title: "เครื่องมือและอุปกรณ์อุตสาหกรรม",
     text: "รวมเครื่องมือช่างและวัสดุสิ้นเปลืองสำหรับโรงงานอุตสาหกรรมคุณภาพสูง",
-    image:
-      "https://images.unsplash.com/photo-1615467529424-0afb0c749c90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwZXF1aXBtZW50JTIwdG9vbHMlMjB3YXJlaG91c2V8ZW58MXx8fHwxNzc1NDY4ODgwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: publicPath("/images/work/industrial-plant-cooling-tower.jpg"),
   },
   {
     title: "อุปกรณ์ความเที่ยงตรงสูง",
     text: "ส่วนประกอบเครื่องจักรและอะไหล่ที่มีความแม่นยำและทนทาน",
-    image:
-      "https://images.unsplash.com/photo-1601598704991-eef6114775e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxpbmR1c3RyaWFsJTIwZXF1aXBtZW50JTIwdG9vbHMlMjB3YXJlaG91c2V8ZW58MXx8fHwxNzc1NDY4ODgwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: publicPath("/images/work/water-filter-inspection.jpg"),
   },
   {
     title: "อุปกรณ์ความปลอดภัย (PPE)",
     text: "อุปกรณ์ป้องกันอันตรายส่วนบุคคลที่ได้รับมาตรฐานสากล",
-    image:
-      "https://images.unsplash.com/photo-1735494032948-14ef288fc9d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYWZldHklMjBlcXVpcG1lbnQlMjBoZWxtZXJ8ZW58MXx8fHwxNzc1NDY4ODgxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: publicPath("/images/work/ppe-safety-inspection.jpg"),
   },
 ];
 
@@ -71,9 +68,9 @@ export default function HomePage() {
           <div className="relative">
             <div className="relative z-20 aspect-[4/5] overflow-hidden rounded-xl shadow-2xl max-lg:aspect-[16/9] max-md:aspect-[4/3]">
               <img
-                alt="Industrial worker with heavy machinery"
+                alt="ทีมงาน Savecost Intertrade กำลังบำรุงรักษาคูลลิ่งทาวเวอร์"
                 className="h-full w-full object-cover"
-                src="https://images.unsplash.com/photo-1764114908655-9a26d32750a0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxpbmR1c3RyaWFsJTIwZmFjdG9yeSUyMHdvcmtlciUyMG1hY2hpbmVyeXxlbnwxfHx8fDE3NzU0Njg4ODB8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                src={publicPath("/images/work/hero-cooling-tower-maintenance.jpg")}
               />
             </div>
           </div>
@@ -123,9 +120,9 @@ export default function HomePage() {
                 </div>
                 <div className="h-64 md:h-auto md:w-1/2">
                   <img
-                    alt="Engineer technician"
+                    alt="ทีมวิศวกรของเรากำลังให้บริการหน้างาน"
                     className="h-full w-full object-cover"
-                    src="https://images.unsplash.com/photo-1759922378219-1d31edb644f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxlbmdpbmVlciUyMHRlY2huaWNpYW4lMjB3b3JraW5nJTIwY29uc3RydWN0aW9ufGVufDF8fHx8MTc3NTQ2ODg4MXww&ixlib=rb-4.1.0&q=80&w=1080"
+                    src={publicPath("/images/work/technician-team-service.jpg")}
                   />
                 </div>
               </div>

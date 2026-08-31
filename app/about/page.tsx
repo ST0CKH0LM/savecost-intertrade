@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { CheckCircle, DollarSign, Eye, Infinity, Rocket } from "lucide-react";
+import { publicPath } from "@/lib/site-paths";
+
+export const metadata: Metadata = {
+  title: "เกี่ยวกับเรา | Savecost Intertrade",
+  description: "รู้จัก Savecost Intertrade ผู้นำเข้าและจัดจำหน่ายอุปกรณ์อุตสาหกรรม ก่อตั้งปี 2015 ดูแลลูกค้ากว่า 30 โรงงานในภาคตะวันออกและกรุงเทพฯ",
+};
 
 const missions = [
   "ให้บริการที่เป็นเลิศด้วยมาตรฐานทางวิศวกรรมระดับสากล",
@@ -28,26 +35,22 @@ const services = [
   {
     title: "Maintenance Services",
     text: "บริการบำรุงรักษาเชิงป้องกันเพื่อลดความเสี่ยงในการหยุดชะงักของสายการผลิต",
-    image:
-      "https://images.unsplash.com/photo-1577894947058-cfdae4276bef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwzfHxpbmR1c3RyaWFsJTIwZmFjdG9yeSUyMHdvcmtlciUyMG1hY2hpbmVyeXxlbnwxfHx8fDE3NzU0Njg4ODB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: publicPath("/images/work/maintenance-pressure-wash.jpg"),
   },
   {
     title: "Engineering Consultation",
     text: "คำปรึกษาทางด้านวิศวกรรมจากผู้เชี่ยวชาญที่มีประสบการณ์",
-    image:
-      "https://images.unsplash.com/photo-1716037991590-c975184b37df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxlbmdpbmVlciUyMHRlY2huaWNpYW4lMjB3b3JraW5nJTIwY29uc3RydWN0aW9ufGVufDF8fHx8MTc3NTQ2ODg4MXww&ixlib=rb-4.1.0&q=80&w=1080",
+    image: publicPath("/images/work/engineering-consultation.jpg"),
   },
   {
     title: "Equipment Supply",
     text: "จัดหาอุปกรณ์อุตสาหกรรมคุณภาพสูงจากแบรนด์ชั้นนำ",
-    image:
-      "https://images.unsplash.com/photo-1633155569441-9d9c1d437b7c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw0fHxpbmR1c3RyaWFsJTIwZXF1aXBtZW50JTIwdG9vbHMlMjB3YXJlaG91c2V8ZW58MXx8fHwxNzc1NDY4ODgwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: publicPath("/images/work/equipment-supply-filters.jpg"),
   },
   {
     title: "Technical Support",
     text: "สนับสนุนข้อมูลทางเทคนิคและช่วยเทียบรุ่นสินค้าตามหน้างานจริง",
-    image:
-      "https://images.unsplash.com/photo-1581092919535-7146ff1a590b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    image: publicPath("/images/work/technical-support-rooftop.jpg"),
   },
 ];
 
@@ -68,9 +71,9 @@ export default function AboutPage() {
           <div className="relative h-[500px] max-md:h-80 lg:col-span-6 lg:h-[650px]">
             <div className="absolute inset-0 -rotate-2 rounded-xl bg-slate-100" />
             <img
-              alt="Industrial worker operating machinery"
+              alt="ทีมงาน Savecost Intertrade กำลังบำรุงรักษาคูลลิ่งทาวเวอร์หน้างานจริง"
               className="absolute inset-0 z-20 h-full w-full rounded-xl object-cover shadow-2xl"
-              src="https://images.unsplash.com/photo-1582036683005-b95da0de191b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwZmFjdG9yeSUyMHdvcmtlciUyMG1hY2hpbmVyeXxlbnwxfHx8fDE3NzU0Njg4ODB8MA&ixlib=rb-4.1.0&q=80&w=1080"
+              src={publicPath("/images/work/about-hero-cooling-tower.jpg")}
             />
           </div>
         </div>

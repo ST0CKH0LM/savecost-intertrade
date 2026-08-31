@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Download, FlaskConical, ShieldCheck, SprayCan, Waves } from "lucide-react";
 import { catalogCategories, catalogProducts, categoryLabels, type ProductCategory } from "@/lib/catalog";
 import { publicPath } from "@/lib/site-paths";
+
+export const metadata: Metadata = {
+  title: "สินค้าของเรา | Savecost Intertrade",
+  description: "เคมีภัณฑ์ จารบี สเปรย์อุตสาหกรรม และสารกรองน้ำสำหรับโรงงานอุตสาหกรรม จาก catalog ของ Savecost Intertrade",
+};
 
 const categoryMeta: Record<ProductCategory, { icon: React.ComponentType<{ size?: number; className?: string }>; note: string }> = {
   Chemical: {
@@ -29,9 +35,9 @@ export default function ProductsPage() {
         <div className="relative overflow-hidden rounded-xl bg-slate-950 px-8 py-16 text-white max-md:px-5 max-md:py-10 md:px-12">
           <div className="absolute inset-0 opacity-25">
             <img
-              alt="Industrial equipment warehouse"
+              alt="โรงงานอุตสาหกรรมที่ทีมงาน SaveCost Intertrade ดูแล"
               className="h-full w-full object-cover"
-              src={publicPath("/images/industrial-hero.png")}
+              src={publicPath("/images/work/products-hero-industrial-site.jpg")}
             />
           </div>
           <div className="relative z-10 grid gap-10 lg:grid-cols-[1fr_360px] lg:items-end">
