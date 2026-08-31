@@ -18,7 +18,9 @@ export function SiteFooter() {
             <a
               aria-label="Facebook"
               className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition-colors hover:bg-[#005ea3]"
-              href="#"
+              href="https://facebook.com/savecost.info"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               <Facebook size={18} />
             </a>

@@ -1,4 +1,12 @@
-import { Mail, MapPin, MapPinned, Phone } from "lucide-react";
+import type { Metadata } from "next";
+import { Mail, MapPin, Phone } from "lucide-react";
+
+const companyAddress = "146/4 ถนนประชาทร แขวงลาดกระบัง เขตลาดกระบัง กรุงเทพฯ 10520";
+
+export const metadata: Metadata = {
+  title: "ติดต่อเรา | Savecost Intertrade",
+  description: "ติดต่อทีมงาน Savecost Intertrade สอบถามสินค้า บริการ หรือขอใบเสนอราคา ที่อยู่ โทรศัพท์ และอีเมลของบริษัท",
+};
 
 export default function ContactPage() {
   return (
@@ -61,10 +69,21 @@ export default function ContactPage() {
           </div>
 
           <div className="group relative overflow-hidden rounded-xl border border-slate-200 shadow-sm">
-            <div className="relative flex aspect-video items-center justify-center overflow-hidden bg-slate-100">
-              <MapPinned className="text-slate-300" size={64} />
-              <div className="absolute inset-0 bg-[#005ea3]/5" />
-              <a className="absolute bottom-4 left-4 rounded-lg bg-white px-4 py-2 text-xs font-bold tracking-tight text-[#005ea3] shadow-md transition-colors hover:bg-[#005ea3] hover:text-white" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+            <div className="relative aspect-video overflow-hidden bg-slate-100">
+              <iframe
+                allowFullScreen
+                className="h-full w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                src={`https://maps.google.com/maps?q=${encodeURIComponent(companyAddress)}&output=embed`}
+                title="แผนที่ตั้งสำนักงาน SaveCost Intertrade"
+              />
+              <a
+                className="absolute bottom-4 left-4 rounded-lg bg-white px-4 py-2 text-xs font-bold tracking-tight text-[#005ea3] shadow-md transition-colors hover:bg-[#005ea3] hover:text-white"
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(companyAddress)}`}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 VIEW ON GOOGLE MAPS
               </a>
             </div>
