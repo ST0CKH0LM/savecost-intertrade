@@ -13,8 +13,13 @@ const navItems = [
   { href: "/contact", label: "ติดต่อเรา" },
 ];
 
+function normalizePath(path: string) {
+  return path.length > 1 && path.endsWith("/") ? path.slice(0, -1) : path;
+}
+
 export function SiteHeader() {
   const pathname = usePathname();
+  const currentPath = normalizePath(pathname);
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -28,17 +33,9 @@ export function SiteHeader() {
 
         <div className="hidden items-center justify-center gap-8 md:flex">
           {navItems.map((item) => {
-            const active = pathname === item.href;
+            const active = currentPath === normalizePath(item.href);
             return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`text-sm font-medium tracking-tight transition-all duration-300 ${
-                  active
-                    ? "border-b-2 border-blue-700 pb-1 text-blue-700"
-                    : "text-slate-600 hover:text-blue-600"
-                }`}
-              >
+              <Link key={item.href} href={item.href} className={`text-sm font-medium transition-all duration-300 ${active ? "border-b-2 border-blue-700 pb-1 text-blue-700" : "text-slate-600 hover:text-blue-600"}`}>
                 {item.label}
               </Link>
             );
@@ -46,19 +43,10 @@ export function SiteHeader() {
         </div>
 
         <div className="flex shrink-0 items-center justify-end gap-4">
-          <Link
-            href="/quote"
-            className="hidden rounded-xl bg-[#005ea3] px-5 py-2.5 text-sm font-medium tracking-tight text-white shadow-md transition-all duration-300 hover:bg-[#0077cc] active:scale-95 active:opacity-80 sm:inline-flex"
-          >
+          <Link href="/quote" className="hidden rounded-xl bg-[#005ea3] px-5 py-2.5 text-sm font-medium text-white shadow-md transition-all duration-300 hover:bg-[#0077cc] active:scale-95 active:opacity-80 sm:inline-flex">
             ขอใบเสนอราคา
           </Link>
-          <button
-            aria-expanded={isOpen}
-            aria-label={isOpen ? "Close navigation" : "Open navigation"}
-            className="p-2 text-slate-600 md:hidden"
-            onClick={() => setIsOpen((current) => !current)}
-            type="button"
-          >
+          <button aria-expanded={isOpen} aria-label={isOpen ? "Close navigation" : "Open navigation"} className="p-2 text-slate-600 md:hidden" onClick={() => setIsOpen((current) => !current)} type="button">
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
@@ -68,25 +56,14 @@ export function SiteHeader() {
         <div className="border-t border-slate-200 bg-white px-5 py-4 md:hidden">
           <div className="grid gap-2">
             {navItems.map((item) => {
-              const active = pathname === item.href;
+              const active = currentPath === normalizePath(item.href);
               return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className={`rounded-lg px-4 py-3 text-sm font-bold ${
-                    active ? "bg-blue-50 text-[#005ea3]" : "text-slate-600"
-                  }`}
-                >
+                <Link key={item.href} href={item.href} onClick={() => setIsOpen(false)} className={`rounded-lg px-4 py-3 text-sm font-bold ${active ? "bg-blue-50 text-[#005ea3]" : "text-slate-600"}`}>
                   {item.label}
                 </Link>
               );
             })}
-            <Link
-              href="/quote"
-              onClick={() => setIsOpen(false)}
-              className="mt-2 rounded-xl bg-[#005ea3] px-4 py-3 text-center text-sm font-bold text-white"
-            >
+            <Link href="/quote" onClick={() => setIsOpen(false)} className="mt-2 rounded-xl bg-[#005ea3] px-4 py-3 text-center text-sm font-bold text-white">
               ขอใบเสนอราคา
             </Link>
           </div>

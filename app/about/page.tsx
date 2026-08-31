@@ -7,11 +7,7 @@ export const metadata: Metadata = {
   description: "รู้จัก Savecost Intertrade ผู้นำเข้าและจัดจำหน่ายอุปกรณ์อุตสาหกรรม ก่อตั้งปี 2015 ดูแลลูกค้ากว่า 30 โรงงานในภาคตะวันออกและกรุงเทพฯ",
 };
 
-const missions = [
-  "ให้บริการที่เป็นเลิศด้วยมาตรฐานทางวิศวกรรมระดับสากล",
-  "คัดสรรผลิตภัณฑ์ที่มีคุณภาพและคุ้มค่าที่สุดสำหรับลูกค้า",
-  "พัฒนาบุคลากรให้มีความเชี่ยวชาญอย่างต่อเนื่อง",
-];
+const missions = ["ให้บริการที่เป็นเลิศด้วยมาตรฐานทางวิศวกรรมระดับสากล", "คัดสรรผลิตภัณฑ์ที่มีคุณภาพและคุ้มค่าที่สุดสำหรับลูกค้า", "พัฒนาบุคลากรให้มีความเชี่ยวชาญอย่างต่อเนื่อง"];
 
 const values = [
   {
@@ -61,20 +57,12 @@ export default function AboutPage() {
         <div className="mx-auto grid w-full max-w-screen-2xl grid-cols-1 items-center gap-12 max-md:gap-8 lg:grid-cols-12">
           <div className="z-10 lg:col-span-6">
             <span className="mb-4 block text-xs font-bold uppercase tracking-[0.2em] text-[#005ea3]">Our Identity</span>
-            <h1 className="mb-8 text-6xl font-black leading-tight tracking-tighter max-md:mb-5 max-md:text-4xl md:text-8xl">เกี่ยวกับเรา.</h1>
-            <p className="max-w-xl text-lg leading-relaxed text-slate-600 max-md:text-base max-md:leading-7">
-              บริษัทก่อตั้งในปี 2015 และดูแลลูกค้าไม่ต่ำกว่า 30 โรงงานในพื้นที่ชลบุรี ฉะเชิงเทรา ระยอง
-              สมุทรปราการ สมุทรสาคร และนครราชสีมา เราจัดจำหน่ายเคมีปรับปรุงคุณภาพน้ำ เคมีภัณฑ์ซ่อมบำรุง
-              สารกรองน้ำ และสินค้าสำหรับอุตสาหกรรมการผลิตแบบครบวงจร
-            </p>
+            <h1 className="mb-8 text-6xl font-bold leading-tight max-md:mb-5 max-md:text-4xl md:text-8xl">เกี่ยวกับเรา.</h1>
+            <p className="max-w-xl text-lg leading-relaxed text-slate-600 max-md:text-base max-md:leading-7">บริษัทก่อตั้งในปี 2015 และดูแลลูกค้าไม่ต่ำกว่า 30 โรงงานในพื้นที่ชลบุรี ฉะเชิงเทรา ระยอง สมุทรปราการ สมุทรสาคร และนครราชสีมา เราจัดจำหน่ายเคมีปรับปรุงคุณภาพน้ำ เคมีภัณฑ์ซ่อมบำรุง สารกรองน้ำ และสินค้าสำหรับอุตสาหกรรมการผลิตแบบครบวงจร</p>
           </div>
           <div className="relative h-[500px] max-md:h-80 lg:col-span-6 lg:h-[650px]">
             <div className="absolute inset-0 -rotate-2 rounded-xl bg-slate-100" />
-            <img
-              alt="ทีมงาน Savecost Intertrade กำลังบำรุงรักษาคูลลิ่งทาวเวอร์หน้างานจริง"
-              className="absolute inset-0 z-20 h-full w-full rounded-xl object-cover shadow-2xl"
-              src={publicPath("/images/work/about-hero-cooling-tower.jpg")}
-            />
+            <img alt="ทีมงาน Savecost Intertrade กำลังบำรุงรักษาคู⁠ล⁠ลิ่ง⁠ทาวเวอร์หน้างานจริง" className="absolute inset-0 z-20 h-full w-full rounded-xl object-cover shadow-2xl" src={publicPath("/images/work/about-hero-cooling-tower.jpg")} />
           </div>
         </div>
       </section>
@@ -86,17 +74,14 @@ export default function AboutPage() {
               <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-xl bg-blue-100">
                 <Eye className="text-[#005ea3]" size={32} />
               </div>
-              <h2 className="mb-6 text-3xl font-black tracking-tight max-md:text-2xl">วิสัยทัศน์ (Vision)</h2>
-              <p className="text-lg leading-relaxed text-slate-600 max-md:text-base max-md:leading-7">
-                มุ่งสู่การเป็นผู้นำในการให้บริการด้านวิศวกรรมและการจัดหาสินค้าอุตสาหกรรมแบบครบวงจร
-                ที่ได้รับความไว้วางใจจากโรงงานอุตสาหกรรมในระดับภูมิภาค
-              </p>
+              <h2 className="mb-6 text-3xl font-bold max-md:text-2xl">วิสัยทัศน์ (Vision)</h2>
+              <p className="text-lg leading-relaxed text-slate-600 max-md:text-base max-md:leading-7">มุ่งสู่การเป็นผู้นำในการให้บริการด้านวิศวกรรมและการจัดหาสินค้าอุตสาหกรรมแบบครบวงจร ที่ได้รับความไว้วางใจจากโรงงานอุตสาหกรรมในระดับภูมิภาค</p>
             </div>
             <div className="rounded-xl bg-white p-12 shadow-sm max-md:p-6">
               <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-xl bg-slate-200">
                 <Rocket className="text-slate-700" size={32} />
               </div>
-              <h2 className="mb-6 text-3xl font-black tracking-tight max-md:text-2xl">พันธกิจ (Mission)</h2>
+              <h2 className="mb-6 text-3xl font-bold max-md:text-2xl">พันธกิจ (Mission)</h2>
               <ul className="space-y-4 text-lg text-slate-600 max-md:text-base">
                 {missions.map((mission, index) => (
                   <li className="flex gap-4" key={mission}>
@@ -113,7 +98,7 @@ export default function AboutPage() {
       <section className="px-8 py-24 max-md:px-5 max-md:py-14 md:px-24">
         <div className="mx-auto max-w-screen-2xl">
           <div className="mb-16">
-            <h2 className="mb-4 text-4xl font-black tracking-tighter max-md:text-3xl">ประวัติความเป็นมา (Our History)</h2>
+            <h2 className="mb-4 text-4xl font-bold max-md:text-3xl">ประวัติความเป็นมา (Our History)</h2>
             <div className="h-1 w-24 bg-[#005ea3]" />
           </div>
           <div className="relative space-y-10 md:space-y-12">
@@ -127,7 +112,7 @@ export default function AboutPage() {
 
       <section className="bg-[#f6f9ff] px-8 py-24 max-md:px-5 max-md:py-14 md:px-24">
         <div className="mx-auto max-w-screen-2xl">
-          <h2 className="mb-16 text-center text-4xl font-black tracking-tighter max-md:mb-8 max-md:text-3xl">ค่านิยมหลักของเรา (Core Values)</h2>
+          <h2 className="mb-16 text-center text-4xl font-bold max-md:mb-8 max-md:text-3xl">ค่านิยมหลักของเรา (Core Values)</h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {values.map((value) => {
               const Icon = value.icon;
@@ -148,7 +133,7 @@ export default function AboutPage() {
           <div className="mb-16 flex flex-col items-end justify-between gap-8 max-md:mb-8 md:flex-row">
             <div className="max-w-2xl">
               <span className="mb-4 block text-xs font-bold uppercase tracking-[0.2em] text-[#005ea3]">Expertise</span>
-              <h2 className="mb-6 text-5xl font-black leading-tight tracking-tighter max-md:text-3xl">บริการของเรา (Our Services)</h2>
+              <h2 className="mb-6 text-5xl font-bold leading-tight max-md:text-3xl">บริการของเรา (Our Services)</h2>
               <p className="text-lg text-slate-600 max-md:text-base max-md:leading-7">โซลูชันวิศวกรรมที่ออกแบบมาเพื่อความแม่นยำและความทนทานในระยะยาว</p>
             </div>
           </div>
