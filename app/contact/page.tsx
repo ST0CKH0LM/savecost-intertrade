@@ -3,8 +3,6 @@ import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { publicPath } from "@/lib/site-paths";
 import { lineId, lineUrl } from "@/lib/social";
 
-const companyAddress = "146/4 ถนนประชาทร แขวงลาดกระบัง เขตลาดกระบัง กรุงเทพฯ 10520";
-
 export const metadata: Metadata = {
   title: "ติดต่อเรา | Savecost Intertrade",
   description: "ติดต่อทีมงาน Savecost Intertrade สอบถามสินค้า บริการ หรือขอใบเสนอราคา ที่อยู่ โทรศัพท์ และอีเมลของบริษัท",
@@ -95,8 +93,8 @@ export default function ContactPage() {
 
           <div className="group relative overflow-hidden rounded-xl border border-slate-200 shadow-sm">
             <div className="relative aspect-video overflow-hidden bg-slate-100">
-              <iframe allowFullScreen className="h-full w-full border-0" loading="lazy" referrerPolicy="no-referrer-when-downgrade" src={`https://maps.google.com/maps?q=${encodeURIComponent(companyAddress)}&output=embed`} title="แผนที่ตั้งสำนักงาน SaveCost Intertrade" />
-              <a className="absolute bottom-4 left-4 rounded-lg bg-white px-4 py-2 text-xs font-bold tracking-tight text-[#005ea3] shadow-md transition-colors hover:bg-[#005ea3] hover:text-white" href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(companyAddress)}`} rel="noopener noreferrer" target="_blank">
+              <iframe allowFullScreen className="h-full w-full border-0" loading="lazy" referrerPolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=SAVECOST+INTERTRADE+CO.,LTD@13.7268453,100.7300746&z=14&output=embed" title="แผนที่ตั้งสำนักงาน SaveCost Intertrade" />
+              <a className="absolute bottom-4 left-4 rounded-lg bg-white px-4 py-2 text-xs font-bold tracking-tight text-[#005ea3] shadow-md transition-colors hover:bg-[#005ea3] hover:text-white" href="https://maps.app.goo.gl/e3hDofp4pB13HNBJA" rel="noopener noreferrer" target="_blank">
                 VIEW ON GOOGLE MAPS
               </a>
             </div>
