@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle, Clock, Download, ShieldCheck, Truck } from "lucide-react";
+import { PortfolioGallery } from "@/components/portfolio-gallery";
 import { catalogProducts } from "@/lib/catalog";
 import { publicPath } from "@/lib/site-paths";
 
@@ -73,8 +74,7 @@ export default function HomePage() {
       <section className="bg-slate-50 py-24 max-md:py-14">
         <div className="mx-auto max-w-7xl px-8 max-md:px-5">
           <div className="mb-16 max-md:mb-8">
-            <span className="text-sm font-bold uppercase tracking-[0.2em] text-[#005ea3]">หมวดหมู่สินค้า</span>
-            <h2 className="mt-2 text-4xl font-bold text-slate-900 max-md:text-3xl">สินค้าแนะนำ (Featured Products)</h2>
+            <h2 className="text-4xl font-bold text-slate-900 max-md:text-3xl">จุดเด่นของเรา</h2>
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-12">
@@ -114,6 +114,17 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="px-8 py-24 max-md:px-5 max-md:py-14">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 max-md:mb-6">
+            <span className="text-sm font-bold uppercase tracking-[0.2em] text-[#005ea3]">Our work</span>
+            <h2 className="mt-3 text-4xl font-bold text-slate-900 max-md:text-3xl">ผลงานของเรา</h2>
+            <p className="mt-4 max-w-2xl text-slate-600">ภาพจากหน้างานจริง ทั้งงานล้างคู⁠ล⁠ลิ่ง⁠ทาวเวอร์ ระบบกรองน้ำ และการสำรวจให้คำปรึกษาแก่โรงงานลูกค้า</p>
+          </div>
+          <PortfolioGallery />
         </div>
       </section>
 

@@ -139,7 +139,7 @@ export const catalogProducts: CatalogProduct[] = [
     id: "SC-3006",
     name: "Moly dry",
     category: "Industrial Sprays",
-    description: "จาระบีแห้งสำหรับฉีดโซ่และเฟืองที่มีแรงเสียดทานสูง ทนความร้อนสูงและช่วยลดการสึกหรอ",
+    description: "จาระบีแห้งสำหรับฉีดโซ่และเฟืองที่มีแรงเสียดทานสูง ทนความร้อนสูง",
   },
   {
     id: "SC-3007",
@@ -169,7 +169,7 @@ export const catalogProducts: CatalogProduct[] = [
     id: "SC-3011",
     name: "Grease food grade",
     category: "Industrial Sprays",
-    description: "จาระบีเกรดอาหารสำหรับหล่อลื่นแม่พิมพ์ งานถอดแบบ หรือพลาสติก ช่วยให้ถอดชิ้นงานได้ง่าย",
+    description: "ส⁠เปรย์หล่อลื่นแม่พิมพ์ ใช้ในงานถอดแบบ หรือพลาสติก ช่วยให้ถอดชิ้นงานได้ง่าย รวดเร็ว",
   },
   {
     id: "SC-5001",

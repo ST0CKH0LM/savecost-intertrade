@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Facebook, Mail, MapPin, Phone } from "lucide-react";
 import { SaveCostLogo } from "@/components/savecost-logo";
-import { facebookUrl, lineUrl } from "@/lib/social";
+import { facebookUrl, lineId, lineUrl } from "@/lib/social";
+import { publicPath } from "@/lib/site-paths";
 
 function LineIcon({ size = 18 }: { size?: number }) {
   return (
@@ -82,6 +83,24 @@ export function SiteFooter() {
               </div>
             </div>
           </div>
+          <a
+            aria-label={`แอดไลน์ SaveCost Intertrade (${lineId})`}
+            className="mt-6 flex w-fit items-center gap-4 text-slate-400 transition-colors hover:text-white"
+            href={lineUrl}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt={`LINE QR Code ของ Savecost Intertrade (ID: ${lineId})`}
+              className="h-24 w-24 flex-shrink-0 rounded-lg bg-white p-1 object-contain"
+              src={publicPath("/images/line-qr.jpg")}
+            />
+            <span className="text-sm leading-6">
+              สแกนเพื่อแอดไลน์
+              <br />
+              ID: <span className="font-bold text-white">{lineId}</span>
+            </span>
+          </a>
         </div>
       </div>
       <div className="border-t border-white/10 px-8 py-6 text-center text-sm text-slate-500 max-md:px-5">
