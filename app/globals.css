@@ -38,3 +38,24 @@ img {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* Floating LINE button: wiggle a few times shortly after the page loads to draw attention. */
+@keyframes line-wiggle {
+  0%, 100% { transform: rotate(0) translateY(0); }
+  10% { transform: rotate(-12deg) translateY(-4px); }
+  20% { transform: rotate(10deg) translateY(-4px); }
+  30% { transform: rotate(-8deg) translateY(-2px); }
+  40% { transform: rotate(6deg) translateY(-2px); }
+  50% { transform: rotate(-3deg) translateY(0); }
+  60% { transform: rotate(0) translateY(0); }
+}
+
+.line-float-wiggle {
+  animation: line-wiggle 1.2s ease-in-out 1s 3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line-float-wiggle {
+    animation: none;
+  }
+}

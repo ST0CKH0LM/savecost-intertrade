@@ -6,7 +6,7 @@ import { publicPath } from "@/lib/site-paths";
 
 export const metadata: Metadata = {
   title: "สินค้าของเรา | Savecost Intertrade",
-  description: "เคมีภัณฑ์ จาระบี ส⁠เปรย์อุตสาหกรรม และสารกรองน้ำสำหรับโรงงานอุตสาหกรรม จาก catalog ของ Savecost Intertrade",
+  description: "เคมีภัณฑ์ จาระบี สเปรย์อุตสาหกรรม และสารกรองน้ำสำหรับโรงงานอุตสาหกรรม จาก catalog ของ Savecost Intertrade",
 };
 
 const categoryMeta: Record<ProductCategory, { icon: React.ComponentType<{ size?: number; className?: string }>; note: string }> = {

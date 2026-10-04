@@ -6,19 +6,19 @@ import { publicPath } from "@/lib/site-paths";
 
 const featured = [
   {
-    title: "เครื่องมือและอุปกรณ์อุตสาหกรรม",
-    text: "รวมเครื่องมือช่างและวัสดุสิ้นเปลืองสำหรับโรงงานอุตสาหกรรมคุณภาพสูง",
-    image: publicPath("/images/work/industrial-plant-cooling-tower.jpg"),
+    title: "ล้างคู⁠ล⁠ลิ่ง⁠ทาวเวอร์และชิล⁠เลอร์",
+    text: "บริการล้างทำความสะอาดคู⁠ล⁠ลิ่ง⁠ทาวเวอร์และชิล⁠เลอร์ถึงหน้างาน ช่วยให้ระบบระบายความร้อนทำงานเต็มประสิทธิภาพ",
+    image: publicPath("/images/portfolio/full/work-02.jpg"),
   },
   {
-    title: "อุปกรณ์ความเที่ยงตรงสูง",
-    text: "ส่วนประกอบเครื่องจักรและอะไหล่ที่มีความแม่นยำและทนทาน",
-    image: publicPath("/images/work/water-filter-inspection.jpg"),
+    title: "เคมีปรับปรุงคุณภาพน้ำ",
+    text: "เคมีสำหรับระบบคู⁠ล⁠ลิ่ง⁠ทาวเวอร์ ชิล⁠เลอร์ และบอย⁠เลอ⁠ร์ รวมถึงน้ำยาล้างคราบน้ำมันและจาระบี",
+    image: publicPath("/images/portfolio/full/work-15.jpg"),
   },
   {
-    title: "อุปกรณ์ความปลอดภัย (PPE)",
-    text: "อุปกรณ์ป้องกันอันตรายส่วนบุคคลที่ได้รับมาตรฐานสากล",
-    image: publicPath("/images/work/ppe-safety-inspection.jpg"),
+    title: "สารกรองน้ำและบริการเปลี่ยนสารกรอง",
+    text: "สารกรองเรซิ่น คาร์บอน แมงกานีส ไส้กรอง และเกลือล้างสารกรอง พร้อมทีมเปลี่ยนสารกรองให้ถึงโรงงาน",
+    image: publicPath("/images/portfolio/full/work-23.jpg"),
   },
 ];
 
@@ -26,7 +26,7 @@ const reasons = [
   { icon: ShieldCheck, title: "คุณภาพที่ตรวจสอบได้", text: "คัดเลือกสินค้าและแบรนด์ที่เหมาะสมกับงานอุตสาหกรรมจริง" },
   { icon: Clock, title: "ตอบกลับรวดเร็ว", text: "ช่วยประเมินสเปกและจัดทำใบเสนอราคาอย่างเป็นระบบ" },
   { icon: Truck, title: "จัดส่งตรงเวลา", text: "ประสานงานตั้งแต่การจัดหาจนถึงการส่งมอบสินค้า" },
-  { icon: CheckCircle, title: "บริการครบวงจร", text: "ให้คำปรึกษา จัดหา เทียบรุ่น และดูแลหลังการขาย" },
+  { icon: CheckCircle, title: "บริการครบวงจร", text: "สินค้าและบริการครบ จบในที่เดียว ช่วยประหยัดงบประมาณและลดต้นทุน" },
 ];
 
 const highlightedProducts = catalogProducts.slice(0, 6);
@@ -78,7 +78,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-12">
-            <div className="group relative cursor-pointer overflow-hidden rounded-xl bg-white shadow-sm transition-all duration-500 hover:shadow-xl md:col-span-8">
+            <div className="group relative overflow-hidden rounded-xl bg-white shadow-sm transition-all duration-500 hover:shadow-xl md:col-span-8">
               <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/60 to-transparent" />
               <img alt={featured[0].title} className="h-96 w-full object-cover transition-transform duration-700 group-hover:scale-105 max-md:h-72 lg:h-full" src={featured[0].image} />
               <div className="absolute bottom-8 left-8 right-8 z-20 text-white max-md:bottom-5 max-md:left-5 max-md:right-5">
@@ -88,7 +88,7 @@ export default function HomePage() {
             </div>
 
             {featured.slice(1).map((item) => (
-              <div key={item.title} className="group cursor-pointer overflow-hidden rounded-xl bg-white shadow-sm transition-all hover:shadow-xl md:col-span-4">
+              <div key={item.title} className="group overflow-hidden rounded-xl bg-white shadow-sm transition-all hover:shadow-xl md:col-span-4">
                 <div className="relative aspect-square">
                   <img alt={item.title} className="h-full w-full object-cover transition-transform group-hover:scale-110" src={item.image} />
                 </div>
@@ -99,11 +99,11 @@ export default function HomePage() {
               </div>
             ))}
 
-            <div className="group cursor-pointer overflow-hidden rounded-xl bg-white shadow-sm transition-all hover:shadow-xl md:col-span-8">
+            <div className="group overflow-hidden rounded-xl bg-white shadow-sm transition-all hover:shadow-xl md:col-span-8">
               <div className="flex h-full flex-col md:flex-row">
                 <div className="flex flex-col justify-center p-8 max-md:p-6 md:w-1/2">
                   <h3 className="text-2xl font-bold text-slate-900">บริการดูแลและซ่อมบำรุง</h3>
-                  <p className="mt-4 leading-relaxed text-slate-600">เรามีทีมงานวิศวกรผู้เชี่ยวชาญพร้อมให้คำปรึกษาและบริการหลังการขาย เพื่อให้การทำงานของคุณไม่สะดุด</p>
+                  <p className="mt-4 leading-relaxed text-slate-600">ดูแลลูกค้ากว่า 30 โรงงานในชลบุรี ฉะเชิงเทรา ระยอง สมุทรปราการ สมุทรสาคร และนครราชสีมา ทั้งงานล้างระบบ เปลี่ยนสารกรอง และล้าง Wet Scrubber</p>
                   <Link className="mt-6 flex items-center gap-2 font-bold text-[#005ea3]" href="/about">
                     รายละเอียดบริการ <ArrowRight size={18} />
                   </Link>
