@@ -42,6 +42,11 @@ const works: { file: string; category: Category; caption: string }[] = [
   { file: "work-26.jpg", category: "filter", caption: "ตรวจสอบระบบกรองน้ำในโรงงาน" },
   { file: "work-27.jpg", category: "survey", caption: "ประชุมหน้างานร่วมกับลูกค้า" },
   { file: "work-28.jpg", category: "survey", caption: "ให้คำปรึกษาและตรวจสอบระบบร่วมกับลูกค้า" },
+  { file: "work-29.jpg", category: "cooling", caption: "คู⁠ล⁠ลิ่ง⁠ทาวเวอร์ทรงเหลี่ยมขนาดใหญ่ในโรงงานอุตสาหกรรม" },
+  { file: "work-30.jpg", category: "cooling", caption: "ฉีดล้างแผ่นฟิลล์คู⁠ล⁠ลิ่ง⁠ทาวเวอร์ขนาดใหญ่" },
+  { file: "work-31.jpg", category: "survey", caption: "วิศวกรตรวจสภาพคู⁠ล⁠ลิ่ง⁠ทาวเวอร์ทรงกลม" },
+  { file: "work-32.jpg", category: "survey", caption: "ตรวจเช็กระบบคู⁠ล⁠ลิ่ง⁠ทาวเวอร์หน้างาน" },
+  { file: "work-33.jpg", category: "cooling", caption: "ส่งมอบเคมี Scale Inhibitor และ Biocide หน้าคู⁠ล⁠ลิ่ง⁠ทาวเวอร์" },
 ];
 
 const initialCount = 12;

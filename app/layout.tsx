@@ -55,7 +55,7 @@ const businessJsonLd = {
     addressCountry: "TH",
   },
   geo: { "@type": "GeoCoordinates", latitude: 13.7268453, longitude: 100.7300746 },
-  areaServed: ["ชลบุรี", "ฉะเชิงเทรา", "ระยอง", "สมุทรปราการ", "สมุทรสาคร", "นครราชสีมา", "กรุงเทพมหานคร"],
+  areaServed: ["ภาคกลาง", "ภาคตะวันออกเฉียงเหนือ", "ภาคตะวันออก"],
   sameAs: [facebookUrl, lineUrl],
 };
 

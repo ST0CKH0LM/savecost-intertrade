@@ -9,10 +9,14 @@ export const metadata: Metadata = {
   description: "เคมีภัณฑ์ จาระบี สเปรย์อุตสาหกรรม และสารกรองน้ำสำหรับโรงงานอุตสาหกรรม จาก catalog ของ Savecost Intertrade",
 };
 
-const categoryMeta: Record<ProductCategory, { icon: React.ComponentType<{ size?: number; className?: string }>; note: string }> = {
+const categoryMeta: Record<
+  ProductCategory,
+  { icon: React.ComponentType<{ size?: number; className?: string }>; note: string; image?: { src: string; className: string } }
+> = {
   Chemical: {
     icon: FlaskConical,
     note: "เคมีปรับปรุงคุณภาพน้ำและน้ำยาซ่อมบำรุงสำหรับระบบคู⁠ล⁠ลิ่ง⁠ทาวเวอร์ ชิล⁠เลอ⁠ร์ และบอย⁠เลอ⁠ร์",
+    image: { src: publicPath("/images/products/chemical.jpg"), className: "bg-[#1b5989]" },
   },
   Grease: {
     icon: ShieldCheck,
@@ -21,10 +25,12 @@ const categoryMeta: Record<ProductCategory, { icon: React.ComponentType<{ size?:
   "Industrial Sprays": {
     icon: SprayCan,
     note: "ส⁠เปรย์อุตสาหกรรมสำหรับทำความสะอาด หล่อลื่น ป้องกันสนิม และงานแม่พิมพ์",
+    image: { src: publicPath("/images/products/industrial-sprays.jpg"), className: "bg-[#1b5989]" },
   },
   "Industrial Water Filters": {
     icon: Waves,
     note: "สารกรองน้ำและวัสดุสำหรับระบบกรองน้ำในโรงงานอุตสาหกรรม",
+    image: { src: publicPath("/images/products/water-filters.jpg"), className: "bg-white" },
   },
 };
 
@@ -81,11 +87,12 @@ export default function ProductsPage() {
       <section className="mx-auto max-w-7xl space-y-16 px-8 max-md:space-y-12 max-md:px-5">
         {catalogCategories.map((category) => {
           const Icon = categoryMeta[category].icon;
+          const image = categoryMeta[category].image;
           const products = catalogProducts.filter((product) => product.category === category);
           return (
             <section id={category} key={category} className="scroll-mt-28">
-              <div className="mb-8 flex flex-col justify-between gap-4 border-b border-slate-200 pb-6 md:flex-row md:items-end">
-                <div>
+              <div className="mb-8 grid overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 md:grid-cols-[1fr_minmax(0,44%)]">
+                <div className="flex flex-col justify-center p-8 max-md:order-2 max-md:p-6">
                   <div className="mb-3 flex items-center gap-3">
                     <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#005ea3] text-white">
                       <Icon size={22} />
@@ -93,23 +100,30 @@ export default function ProductsPage() {
                     <span className="text-sm font-bold uppercase tracking-[0.2em] text-[#005ea3]">{category}</span>
                   </div>
                   <h2 className="text-3xl font-bold text-slate-900 max-md:text-2xl md:text-4xl">{categoryLabels[category]}</h2>
-                  <p className="mt-3 max-w-3xl text-slate-600">{categoryMeta[category].note}</p>
+                  <p className="mt-3 max-w-xl text-slate-600">{categoryMeta[category].note}</p>
+                  <span className="mt-5 self-start rounded-full bg-white px-4 py-2 text-sm font-bold text-slate-600 ring-1 ring-slate-200">{products.length} รายการ</span>
                 </div>
-                <span className="rounded-full bg-slate-100 px-4 py-2 text-sm font-bold text-slate-600">{products.length} รายการ</span>
+                <div className={`flex aspect-[16/9] items-center justify-center max-md:order-1 md:aspect-auto md:min-h-64 ${image ? image.className : "bg-[#1b5989]"}`}>
+                  {image ? (
+                    <img alt={`ตัวอย่างสินค้า${categoryLabels[category]} SaveCost`} className="h-full max-h-80 w-full object-contain p-4" src={image.src} />
+                  ) : (
+                    <Icon size={96} className="text-white/30" />
+                  )}
+                </div>
               </div>
 
-              <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+              <div className="grid grid-cols-1 gap-5 max-md:gap-3 md:grid-cols-2 xl:grid-cols-3">
                 {products.map((product) => (
                   <article key={product.id} className="group flex min-h-60 flex-col rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-[#005ea3]/40 hover:shadow-xl max-md:min-h-0 max-md:p-5">
-                    <div className="mb-5">
-                      <div className="mb-4 flex items-center justify-between gap-3">
+                    <div className="mb-5 max-md:mb-3">
+                      <div className="mb-4 flex items-center justify-between gap-3 max-md:mb-2">
                         <div className="text-xs font-bold tracking-[0.2em] text-[#005ea3]">{product.id}</div>
-                        <span className="max-w-[190px] rounded-full bg-slate-100 px-3 py-1 text-right text-xs font-bold leading-snug whitespace-nowrap text-slate-500">{categoryLabels[category]}</span>
+                        <span className="max-w-[190px] rounded-full bg-slate-100 max-md:hidden px-3 py-1 text-right text-xs font-bold leading-snug whitespace-nowrap text-slate-500">{categoryLabels[category]}</span>
                       </div>
                       <h3 className="max-w-[22rem] text-xl font-bold leading-snug text-slate-900 group-hover:text-[#005ea3] max-md:text-lg">{product.name}</h3>
                     </div>
                     <p className="flex-1 leading-7 text-slate-600 max-md:text-[0.95rem]">{product.description}</p>
-                    <Link className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#005ea3]" href={`/quote?product=${product.id}`}>
+                    <Link className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#005ea3] max-md:mt-3" href={`/quote?product=${product.id}`}>
                       ขอราคาสินค้านี้ <ArrowRight size={16} />
                     </Link>
                   </article>

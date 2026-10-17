@@ -12,77 +12,84 @@ const missions = ["ให้บริการที่เป็นเลิศ�
 const values = [
   {
     icon: CheckCircle,
-    title: "Quality First",
+    title: "คุณภาพมาก่อน",
+    en: "Quality First",
     text: "มุ่งเน้นคุณภาพในทุกกระบวนการทำงานและการคัดสรรผลิตภัณฑ์",
   },
   {
     icon: Infinity,
-    title: "One-Stop Service",
+    title: "ครบ จบในที่เดียว",
+    en: "One-Stop Service",
     text: "ตอบโจทย์ทุกความต้องการด้านอุตสาหกรรมในที่เดียวอย่างมีประสิทธิภาพ",
   },
   {
     icon: DollarSign,
-    title: "Cost Efficiency",
+    title: "ช่วยลดต้นทุน",
+    en: "Cost Efficiency",
     text: "ช่วยลูกค้าลดต้นทุนและเพิ่มผลกำไรด้วยโซลูชันที่ชาญฉลาด",
   },
 ];
 
 const services = [
   {
-    title: "Maintenance Services",
+    title: "บริการบำรุงรักษา",
+    en: "Maintenance Services",
     text: "บริการบำรุงรักษาเชิงป้องกันเพื่อลดความเสี่ยงในการหยุดชะงักของสายการผลิต",
-    image: publicPath("/images/work/maintenance-pressure-wash.jpg"),
+    image: publicPath("/images/portfolio/full/work-32.jpg"),
   },
   {
-    title: "Engineering Consultation",
+    title: "ที่ปรึกษาด้านวิศวกรรม",
+    en: "Engineering Consultation",
     text: "คำปรึกษาทางด้านวิศวกรรมจากผู้เชี่ยวชาญที่มีประสบการณ์",
     image: publicPath("/images/work/engineering-consultation.jpg"),
   },
   {
-    title: "Equipment Supply",
+    title: "จัดหาสินค้าและอุปกรณ์",
+    en: "Equipment Supply",
     text: "จัดหาอุปกรณ์อุตสาหกรรมคุณภาพสูงจากแบรนด์ชั้นนำ",
-    image: publicPath("/images/work/equipment-supply-filters.jpg"),
+    image: publicPath("/images/portfolio/full/work-15.jpg"),
   },
   {
-    title: "Technical Support",
+    title: "สนับสนุนด้านเทคนิค",
+    en: "Technical Support",
     text: "สนับสนุนข้อมูลทางเทคนิคและช่วยเทียบรุ่นสินค้าตามหน้างานจริง",
-    image: publicPath("/images/work/technical-support-rooftop.jpg"),
+    image: publicPath("/images/portfolio/full/work-18.jpg"),
   },
 ];
 
 export default function AboutPage() {
   return (
     <div>
-      <section className="relative mb-24 flex min-h-[716px] items-center overflow-hidden px-8 pt-24 max-md:mb-14 max-md:min-h-0 max-md:px-6 max-md:pt-28 md:px-24">
+      <section className="relative mb-24 flex min-h-[716px] items-center overflow-hidden px-8 pt-24 max-md:mb-14 max-md:min-h-0 max-md:px-5 max-md:pt-28 md:px-12 lg:px-24">
         <div className="mx-auto grid w-full max-w-screen-2xl grid-cols-1 items-center gap-12 max-md:gap-8 lg:grid-cols-12">
           <div className="z-10 lg:col-span-6">
             <span className="mb-4 block text-xs font-bold uppercase tracking-[0.2em] text-[#005ea3]">Our Identity</span>
             <h1 className="mb-8 text-6xl font-bold leading-tight max-md:mb-5 max-md:text-4xl md:text-8xl">เกี่ยวกับเรา.</h1>
-            <p className="max-w-xl text-lg leading-relaxed text-slate-600 max-md:text-base max-md:leading-7">บริษัทก่อตั้งในปี 2015 และดูแลลูกค้าไม่ต่ำกว่า 30 โรงงานในพื้นที่ชลบุรี ฉะเชิงเทรา ระยอง สมุทรปราการ สมุทรสาคร และนครราชสีมา เราจัดจำหน่ายเคมีปรับปรุงคุณภาพน้ำ เคมีภัณฑ์ซ่อมบำรุง สารกรองน้ำ และสินค้าสำหรับอุตสาหกรรมการผลิตแบบครบวงจร</p>
+            <p className="max-w-xl text-lg leading-relaxed text-slate-600 max-md:text-base max-md:leading-7">บริษัทก่อตั้งในปี 2015 และดูแลลูกค้าไม่ต่ำกว่า 30 โรงงานในภาคกลาง ภาคตะวันออกเฉียงเหนือ และภาคตะวันออก เราจัดจำหน่ายเคมีปรับปรุงคุณภาพน้ำ เคมีภัณฑ์ซ่อมบำรุง สารกรองน้ำ และสินค้าสำหรับอุตสาหกรรมการผลิตแบบครบวงจร</p>
           </div>
           <div className="relative h-[500px] max-md:h-80 lg:col-span-6 lg:h-[650px]">
             <div className="absolute inset-0 -rotate-2 rounded-xl bg-slate-100" />
-            <img alt="ทีมงาน Savecost Intertrade กำลังบำรุงรักษาคู⁠ล⁠ลิ่ง⁠ทาวเวอร์หน้างานจริง" className="absolute inset-0 z-20 h-full w-full rounded-xl object-cover shadow-2xl" src={publicPath("/images/work/about-hero-cooling-tower.jpg")} />
+            <img alt="ทีมงาน Savecost Intertrade พร้อมให้บริการหน้างานคู⁠ล⁠ลิ่ง⁠ทาวเวอร์" className="absolute inset-0 z-20 h-full w-full rounded-xl object-cover shadow-2xl" src={publicPath("/images/portfolio/full/work-17.jpg")} />
           </div>
         </div>
       </section>
 
-      <section className="bg-slate-50 px-8 py-24 max-md:px-5 max-md:py-14 md:px-24">
+      <section className="bg-slate-50 px-8 py-24 max-md:px-5 max-md:py-14 md:px-12 lg:px-24">
         <div className="mx-auto max-w-screen-2xl">
-          <div className="grid grid-cols-1 gap-16 max-md:gap-5 md:grid-cols-2">
-            <div className="rounded-xl bg-white p-12 shadow-sm max-md:p-6">
-              <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-xl bg-blue-100">
+          <div className="grid grid-cols-1 gap-16 max-md:gap-4 md:grid-cols-2 md:gap-6 lg:gap-16">
+            <div className="rounded-xl bg-white p-12 shadow-sm max-md:p-6 md:p-8 lg:p-12">
+              <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-xl bg-blue-100 max-md:mb-4 max-md:h-12 max-md:w-12">
                 <Eye className="text-[#005ea3]" size={32} />
               </div>
-              <h2 className="mb-6 text-3xl font-bold max-md:text-2xl">วิสัยทัศน์ (Vision)</h2>
+              <h2 className="mb-6 text-3xl font-bold max-md:mb-3 max-md:text-2xl">วิสัยทัศน์ <span className="max-md:hidden">(Vision)</span></h2>
               <p className="text-lg leading-relaxed text-slate-600 max-md:text-base max-md:leading-7">มุ่งสู่การเป็นผู้นำในการให้บริการด้านวิศวกรรมและการจัดหาสินค้าอุตสาหกรรมแบบครบวงจร ที่ได้รับความไว้วางใจจากโรงงานอุตสาหกรรมในระดับภูมิภาค</p>
             </div>
-            <div className="rounded-xl bg-white p-12 shadow-sm max-md:p-6">
-              <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-xl bg-slate-200">
+            <div className="rounded-xl bg-white p-12 shadow-sm max-md:p-6 md:p-8 lg:p-12">
+              <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-xl bg-slate-200 max-md:mb-4 max-md:h-12 max-md:w-12">
                 <Rocket className="text-slate-700" size={32} />
               </div>
-              <h2 className="mb-6 text-3xl font-bold max-md:text-2xl">พันธกิจ (Mission)</h2>
-              <ul className="space-y-4 text-lg text-slate-600 max-md:text-base">
+              <h2 className="mb-6 text-3xl font-bold max-md:mb-3 max-md:text-2xl">พันธกิจ <span className="max-md:hidden">(Mission)</span></h2>
+              <ul className="space-y-4 text-lg text-slate-600 max-md:space-y-3 max-md:text-base">
                 {missions.map((mission, index) => (
                   <li className="flex gap-4" key={mission}>
                     <span className="font-bold text-[#005ea3]">{String(index + 1).padStart(2, "0")}</span>
@@ -95,31 +102,32 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="px-8 py-24 max-md:px-5 max-md:py-14 md:px-24">
+      <section className="px-8 py-24 max-md:px-5 max-md:py-14 md:px-12 lg:px-24">
         <div className="mx-auto max-w-screen-2xl">
-          <div className="mb-16">
-            <h2 className="mb-4 text-4xl font-bold max-md:text-3xl">ประวัติความเป็นมา (Our History)</h2>
+          <div className="mb-16 max-md:mb-8">
+            <h2 className="mb-4 text-4xl font-bold max-md:text-3xl">ประวัติความเป็นมา <span className="max-md:hidden">(Our History)</span></h2>
             <div className="h-1 w-24 bg-[#005ea3]" />
           </div>
           <div className="relative space-y-10 md:space-y-12">
             <div className="absolute bottom-0 left-5 top-0 w-px bg-slate-300 md:left-1/2" />
             <Timeline year="2015" text="เริ่มต้นบริษัทเพื่อจัดหาเคมีภัณฑ์และสินค้าซ่อมบำรุงสำหรับโรงงานอุตสาหกรรม" side="left" />
-            <Timeline year="30+ โรงงาน" text="ขยายฐานลูกค้าในพื้นที่อุตสาหกรรมหลัก เช่น ชลบุรี ฉะเชิงเทรา ระยอง และสมุทรปราการ" side="right" />
+            <Timeline year="30+ โรงงาน" text="ขยายฐานลูกค้าในพื้นที่อุตสาหกรรมหลัก ทั้งภาคกลาง ภาคตะวันออกเฉียงเหนือ และภาคตะวันออก" side="right" />
             <Timeline year="ปัจจุบัน" text="ให้บริการแบบครบจบในที่เดียว ทั้งสินค้า คุณภาพ บริการจัดส่ง และการช่วยลดต้นทุน" side="left" />
           </div>
         </div>
       </section>
 
-      <section className="bg-[#f6f9ff] px-8 py-24 max-md:px-5 max-md:py-14 md:px-24">
+      <section className="bg-[#f6f9ff] px-8 py-24 max-md:px-5 max-md:py-14 md:px-12 lg:px-24">
         <div className="mx-auto max-w-screen-2xl">
-          <h2 className="mb-16 text-center text-4xl font-bold max-md:mb-8 max-md:text-3xl">ค่านิยมหลักของเรา (Core Values)</h2>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <h2 className="mb-16 text-center text-4xl font-bold max-md:mb-6 max-md:text-left max-md:text-3xl">ค่านิยมหลักของเรา <span className="max-md:hidden">(Core Values)</span></h2>
+          <div className="grid grid-cols-1 gap-8 max-md:gap-3 md:grid-cols-3 md:gap-4 lg:gap-8">
             {values.map((value) => {
               const Icon = value.icon;
               return (
-                <div key={value.title} className="rounded-xl border border-slate-200 bg-white p-8 transition-shadow duration-300 hover:shadow-xl max-md:p-6">
-                  <Icon className="mb-6 text-[#005ea3]" size={48} />
-                  <h3 className="mb-4 text-2xl font-bold">{value.title}</h3>
+                <div key={value.title} className="rounded-xl border border-slate-200 bg-white p-8 transition-shadow duration-300 hover:shadow-xl max-md:p-5 md:p-6 lg:p-8">
+                  <Icon className="mb-6 text-[#005ea3] max-md:mb-3 max-md:h-9 max-md:w-9" size={48} />
+                  <span className="mb-1 block text-xs font-bold uppercase tracking-[0.2em] text-[#005ea3] md:tracking-[0.12em] lg:tracking-[0.2em]">{value.en}</span>
+                  <h3 className="mb-4 text-2xl font-bold max-md:mb-2 max-md:text-xl md:text-xl lg:text-2xl">{value.title}</h3>
                   <p className="text-slate-600">{value.text}</p>
                 </div>
               );
@@ -128,12 +136,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="overflow-hidden bg-slate-50 px-8 py-24 max-md:px-5 max-md:py-14 md:px-24">
+      <section className="overflow-hidden bg-slate-50 px-8 py-24 max-md:px-5 max-md:py-14 md:px-12 lg:px-24">
         <div className="mx-auto max-w-screen-2xl">
           <div className="mb-16 flex flex-col items-end justify-between gap-8 max-md:mb-8 md:flex-row">
             <div className="max-w-2xl">
               <span className="mb-4 block text-xs font-bold uppercase tracking-[0.2em] text-[#005ea3]">Expertise</span>
-              <h2 className="mb-6 text-5xl font-bold leading-tight max-md:text-3xl">บริการของเรา (Our Services)</h2>
+              <h2 className="mb-6 text-5xl font-bold leading-tight max-md:text-3xl">บริการของเรา <span className="max-md:hidden">(Our Services)</span></h2>
               <p className="text-lg text-slate-600 max-md:text-base max-md:leading-7">โซลูชันวิศวกรรมที่ออกแบบมาเพื่อความแม่นยำและความทนทานในระยะยาว</p>
             </div>
           </div>
@@ -141,8 +149,9 @@ export default function AboutPage() {
             {services.map((service) => (
               <article key={service.title} className="group relative aspect-[4/5] overflow-hidden rounded-xl bg-white max-md:aspect-[4/3]">
                 <img alt={service.title} className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" src={service.image} />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent" />
-                <div className="absolute bottom-0 z-20 p-8 text-white max-md:p-5">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/10" />
+                <div className="absolute bottom-0 z-20 p-8 text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] max-md:p-5">
+                  <span className="mb-1 block text-xs font-bold uppercase tracking-[0.2em] text-sky-200">{service.en}</span>
                   <h3 className="mb-2 text-2xl font-bold max-md:text-xl">{service.title}</h3>
                   <p className="text-sm text-slate-300 opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100">{service.text}</p>
                 </div>
