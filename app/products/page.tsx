@@ -50,14 +50,14 @@ export default function ProductsPage() {
           </div>
           <div className="relative z-10 grid gap-10 lg:grid-cols-[1fr_360px] lg:items-end">
             <div>
-              <span className="mb-4 block text-xs font-bold uppercase tracking-[0.24em] text-sky-300">PRODUCT CATALOG 2024</span>
+              <span className="mb-4 block text-xs font-bold uppercase tracking-[0.24em] text-sky-300">PRODUCT CATALOG 2026</span>
               <h1 className="mb-5 max-w-3xl text-5xl font-extrabold max-md:text-4xl md:text-6xl">สินค้าของเรา</h1>
               <p className="max-w-2xl text-lg leading-relaxed text-slate-200 max-md:text-base max-md:leading-7">รายการสินค้าจาก catalog ล่าสุดของ SaveCost Intertrade ครอบคลุมเคมีภัณฑ์ จาระบี ส⁠เปรย์อุตสาหกรรม และสารกรองน้ำสำหรับงานโรงงาน</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#005ea3] px-5 py-3 font-bold text-white shadow-lg transition-colors hover:bg-[#0077cc] sm:w-auto" href="/quote">
                   ขอใบเสนอราคา <ArrowRight size={18} />
                 </Link>
-                <a className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 font-bold text-slate-950 transition-colors hover:bg-slate-100 sm:w-auto" href={publicPath("/catalog/savecost-catalog-2024.pdf")} target="_blank">
+                <a className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 font-bold text-slate-950 transition-colors hover:bg-slate-100 sm:w-auto" href={publicPath("/catalog/savecost-catalog-2026.pdf")} target="_blank">
                   ดาวน์โหลด Catalog <Download size={18} />
                 </a>
               </div>

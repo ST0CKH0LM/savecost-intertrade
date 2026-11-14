@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans_Thai } from "next/font/google";
+import { Noto_Sans_Thai } from "next/font/google";
 import "./globals.css";
 import { LineFloatButton } from "@/components/line-float-button";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { facebookUrl, lineUrl } from "@/lib/social";
 
-const ibmPlexSansThai = IBM_Plex_Sans_Thai({
+const notoSansThai = Noto_Sans_Thai({
   subsets: ["thai", "latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-ibm-plex-sans-thai",
+  variable: "--font-noto-sans-thai",
 });
 
 const siteUrl = "https://st0ckh0lm.github.io/savecost-intertrade/";
@@ -66,7 +65,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="th">
-      <body className={ibmPlexSansThai.variable}>
+      <body className={notoSansThai.variable}>
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />

@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle, Clock, Download, ShieldCheck, Truck } from "lucide-react";
+import { ArrowRight, CheckCircle, ChevronDown, Clock, Download, ShieldCheck, Truck } from "lucide-react";
 import { PortfolioGallery } from "@/components/portfolio-gallery";
 import { catalogProducts } from "@/lib/catalog";
+import { clients } from "@/lib/clients";
 import { publicPath } from "@/lib/site-paths";
 
 const featured = [
@@ -30,6 +31,9 @@ const reasons = [
 ];
 
 const highlightedProducts = catalogProducts.slice(0, 6);
+
+/** Clients shown before the "show all" toggle. */
+const visibleClients = 24;
 
 export default function HomePage() {
   return (
@@ -128,6 +132,33 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="bg-slate-50 px-8 py-24 max-md:px-5 max-md:py-14">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 max-md:mb-6">
+            <span className="text-sm font-bold uppercase tracking-[0.2em] text-[#005ea3]">Our clients</span>
+            <h2 className="mt-3 text-4xl font-bold text-slate-900 max-md:text-3xl">ลูกค้าที่ไว้วางใจเรา</h2>
+            <p className="mt-4 max-w-2xl text-slate-600">โรงงานและองค์กรกว่า {Math.floor(clients.length / 10) * 10} แห่งที่เลือกใช้สินค้าและบริการของ SaveCost Intertrade</p>
+          </div>
+          <ul className="flex flex-wrap gap-2">
+            {clients.slice(0, visibleClients).map((name) => (
+              <ClientChip key={name} name={name} />
+            ))}
+          </ul>
+          <details className="group mt-2">
+            <summary className="inline-flex cursor-pointer list-none items-center gap-2 rounded-full px-4 py-2 text-sm font-bold text-[#005ea3] hover:bg-blue-50 [&::-webkit-details-marker]:hidden">
+              <span className="group-open:hidden">ดูรายชื่อทั้งหมด ({clients.length})</span>
+              <span className="hidden group-open:inline">ย่อรายชื่อ</span>
+              <ChevronDown className="transition-transform group-open:rotate-180" size={16} />
+            </summary>
+            <ul className="mt-2 flex flex-wrap gap-2">
+              {clients.slice(visibleClients).map((name) => (
+                <ClientChip key={name} name={name} />
+              ))}
+            </ul>
+          </details>
+        </div>
+      </section>
+
       <section className="px-8 py-24 max-md:px-5 max-md:py-14">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 flex flex-col justify-between gap-6 max-md:mb-6 md:flex-row md:items-end">
@@ -136,7 +167,7 @@ export default function HomePage() {
               <h2 className="mt-3 text-4xl font-bold text-slate-900 max-md:text-3xl">รายการสินค้าจาก Catalog ล่าสุด</h2>
               <p className="mt-4 max-w-2xl text-slate-600">เริ่มจากรายการยอดนิยมในหมวดเคมีภัณฑ์และสินค้าซ่อมบำรุง พร้อมดูทั้งหมดได้ในหน้า catalog</p>
             </div>
-            <a className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 px-5 py-3 font-bold text-slate-700 transition-colors hover:bg-slate-50" href={publicPath("/catalog/savecost-catalog-2024.pdf")} target="_blank">
+            <a className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 px-5 py-3 font-bold text-slate-700 transition-colors hover:bg-slate-50" href={publicPath("/catalog/savecost-catalog-2026.pdf")} target="_blank">
               ดาวน์โหลด PDF <Download size={18} />
             </a>
           </div>
@@ -183,6 +214,10 @@ export default function HomePage() {
       </section>
     </>
   );
+}
+
+function ClientChip({ name }: { name: string }) {
+  return <li className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm max-md:px-3 max-md:py-1.5">{name}</li>;
 }
 
 function HeroMetric({ label, value }: { label: string; value: string }) {
