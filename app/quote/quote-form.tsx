@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { AlertCircle, CheckCircle2, FileText, Loader2, PackageSearch, Send } from "lucide-react";
-import { catalogProducts } from "@/lib/catalog";
+import { catalogProducts, productKey } from "@/lib/catalog";
 import { lineId, lineUrl } from "@/lib/social";
 
 const recipientEmail = "savecost.info@gmail.com";
@@ -62,9 +62,9 @@ export function QuoteForm() {
 
   useEffect(() => {
     const productId = new URLSearchParams(window.location.search).get("product");
-    const product = catalogProducts.find((item) => item.id === productId);
+    const product = catalogProducts.find((item) => productKey(item) === productId);
     if (product && itemsRef.current) {
-      itemsRef.current.value = `${product.id} - ${product.name}\n`;
+      itemsRef.current.value = `${product.id ? `${product.id} - ` : ""}${product.name}\n`;
     }
   }, []);
 

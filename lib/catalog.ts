@@ -3,7 +3,7 @@ export type ProductCategory = "Chemical" | "Grease" | "Industrial Sprays" | "Ind
 export type CatalogProduct = {
   category: ProductCategory;
   description: string;
-  id: string;
+  id?: string;
   name: string;
 };
 
@@ -195,6 +195,21 @@ export const catalogProducts: CatalogProduct[] = [
     category: "Industrial Water Filters",
     description: "สารกรองน้ำบาดาลที่มีสนิมเหล็กปะปน ช่วยลดกลิ่น สีแดง คราบสนิม และปรับคุณภาพน้ำ",
   },
+  {
+    name: "Anthracite",
+    category: "Industrial Water Filters",
+    description: "ถ่านหินคุณภาพสูงที่สุด สีดำเข้มและมันวาวแบบกึ่งโลหะ ทำหน้าที่ดักจับตะกอน ความขุ่น โคลนตม และสารแขวนลอยต่างๆ ที่ปนเปื้อนมากับน้ำ",
+  },
+  {
+    name: "Silica sand / Filter sand",
+    category: "Industrial Water Filters",
+    description: "ทรายกรองและกรวด ดักจับตะกอน ความขุ่น และสิ่งแขวนลอยขนาดใหญ่ เช่น เศษดิน โคลน และทราย",
+  },
 ];
+
+/** Identifier used in quote links: the catalog code when there is one, otherwise the name. */
+export function productKey(product: CatalogProduct) {
+  return product.id ?? product.name;
+}
 
 export const catalogCategories = Object.keys(categoryLabels) as ProductCategory[];

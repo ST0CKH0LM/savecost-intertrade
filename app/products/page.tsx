@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Download, FlaskConical, ShieldCheck, SprayCan, Waves } from "lucide-react";
-import { catalogCategories, catalogProducts, categoryLabels, type ProductCategory } from "@/lib/catalog";
+import { catalogCategories, catalogProducts, categoryLabels, productKey, type ProductCategory } from "@/lib/catalog";
 import { publicPath } from "@/lib/site-paths";
 
 export const metadata: Metadata = {
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const categoryMeta: Record<
   ProductCategory,
-  { icon: React.ComponentType<{ size?: number; className?: string }>; note: string; image?: { src: string; className: string } }
+  { icon: React.ComponentType<{ size?: number; className?: string }>; note: string; image?: { src: string; className: string; imgClassName?: string } }
 > = {
   Chemical: {
     icon: FlaskConical,
@@ -21,6 +21,7 @@ const categoryMeta: Record<
   Grease: {
     icon: ShieldCheck,
     note: "จาระบีสำหรับงานหล่อลื่นทั่วไป งานหนัก งานอุณหภูมิสูง และงานป้องกันการจับตาย",
+    image: { src: publicPath("/images/products/grease.jpg"), className: "bg-[#1b5989]" },
   },
   "Industrial Sprays": {
     icon: SprayCan,
@@ -30,7 +31,12 @@ const categoryMeta: Record<
   "Industrial Water Filters": {
     icon: Waves,
     note: "สารกรองน้ำและวัสดุสำหรับระบบกรองน้ำในโรงงานอุตสาหกรรม",
-    image: { src: publicPath("/images/products/water-filters.jpg"), className: "bg-white" },
+    image: {
+      src: publicPath("/images/products/water-filters-bags.jpg"),
+      // blend the white photo into the slate-50 text column instead of a hard edge
+      className: "bg-gradient-to-r from-slate-50 to-white to-30%",
+      imgClassName: "[mask-image:linear-gradient(to_right,transparent,black_18%)]",
+    },
   },
 };
 
@@ -105,7 +111,7 @@ export default function ProductsPage() {
                 </div>
                 <div className={`flex aspect-[16/9] items-center justify-center max-md:order-1 md:aspect-auto md:min-h-64 ${image ? image.className : "bg-[#1b5989]"}`}>
                   {image ? (
-                    <img alt={`ตัวอย่างสินค้า${categoryLabels[category]} SaveCost`} className="h-full max-h-80 w-full object-contain p-4" src={image.src} />
+                    <img alt={`ตัวอย่างสินค้า${categoryLabels[category]} SaveCost`} className={`h-full max-h-80 w-full object-contain p-4 ${image.imgClassName ?? ""}`} src={image.src} />
                   ) : (
                     <Icon size={96} className="text-white/30" />
                   )}
@@ -114,7 +120,7 @@ export default function ProductsPage() {
 
               <div className="grid grid-cols-1 gap-5 max-md:gap-3 md:grid-cols-2 xl:grid-cols-3">
                 {products.map((product) => (
-                  <article key={product.id} className="group flex min-h-60 flex-col rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-[#005ea3]/40 hover:shadow-xl max-md:min-h-0 max-md:p-5">
+                  <article key={productKey(product)} className="group flex min-h-60 flex-col rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-[#005ea3]/40 hover:shadow-xl max-md:min-h-0 max-md:p-5">
                     <div className="mb-5 max-md:mb-3">
                       <div className="mb-4 flex items-center justify-between gap-3 max-md:mb-2">
                         <div className="text-xs font-bold tracking-[0.2em] text-[#005ea3]">{product.id}</div>
@@ -123,7 +129,7 @@ export default function ProductsPage() {
                       <h3 className="max-w-[22rem] text-xl font-bold leading-snug text-slate-900 group-hover:text-[#005ea3] max-md:text-lg">{product.name}</h3>
                     </div>
                     <p className="flex-1 leading-7 text-slate-600 max-md:text-[0.95rem]">{product.description}</p>
-                    <Link className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#005ea3] max-md:mt-3" href={`/quote?product=${product.id}`}>
+                    <Link className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#005ea3] max-md:mt-3" href={`/quote?product=${encodeURIComponent(productKey(product))}`}>
                       ขอราคาสินค้านี้ <ArrowRight size={16} />
                     </Link>
                   </article>

@@ -41,7 +41,8 @@ const services = [
     title: "ที่ปรึกษาด้านวิศวกรรม",
     en: "Engineering Consultation",
     text: "คำปรึกษาทางด้านวิศวกรรมจากผู้เชี่ยวชาญที่มีประสบการณ์",
-    image: publicPath("/images/work/engineering-consultation.jpg"),
+    image: publicPath("/images/portfolio/full/work-34.jpg"),
+    position: "object-right",
   },
   {
     title: "จัดหาสินค้าและอุปกรณ์",
@@ -53,7 +54,7 @@ const services = [
     title: "สนับสนุนด้านเทคนิค",
     en: "Technical Support",
     text: "สนับสนุนข้อมูลทางเทคนิคและช่วยเทียบรุ่นสินค้าตามหน้างานจริง",
-    image: publicPath("/images/portfolio/full/work-18.jpg"),
+    image: publicPath("/images/portfolio/full/work-40.jpg"),
   },
 ];
 
@@ -148,7 +149,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
             {services.map((service) => (
               <article key={service.title} className="group relative aspect-[4/5] overflow-hidden rounded-xl bg-white max-md:aspect-[4/3]">
-                <img alt={service.title} className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" src={service.image} />
+                <img alt={service.title} className={`absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110 ${service.position ?? ""}`} src={service.image} />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/10" />
                 <div className="absolute bottom-0 z-20 p-8 text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] max-md:p-5">
                   <span className="mb-1 block text-xs font-bold uppercase tracking-[0.2em] text-sky-200">{service.en}</span>

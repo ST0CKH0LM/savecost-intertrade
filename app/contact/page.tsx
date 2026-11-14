@@ -62,7 +62,7 @@ export default function ContactPage() {
             </ContactBlock>
             <ContactBlock icon={<Phone className="text-[#005ea3]" size={24} />} title="โทรศัพท์">
               <p className="font-medium">098-524-1542 | 081-889-7068</p>
-              <p className="mt-1 text-sm text-slate-500">จันทร์ - ศุกร์, 08:30 - 17:30 น.</p>
+              <p className="mt-1 text-sm text-slate-500">จันทร์ - ศุกร์, 08:30 - 17:00 น.</p>
             </ContactBlock>
             <ContactBlock icon={<Mail className="text-[#005ea3]" size={24} />} title="อีเมล">
               <p className="font-medium">savecost.info@gmail.com</p>
