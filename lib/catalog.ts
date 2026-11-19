@@ -11,7 +11,7 @@ export const categoryLabels: Record<ProductCategory, string> = {
   Chemical: "เคมีภัณฑ์",
   Grease: "จาระบี",
   "Industrial Sprays": "ส⁠เปรย์อุตสาหกรรม",
-  "Industrial Water Filters": "สารกรองน้ำ",
+  "Industrial Water Filters": "สารกรองน้ำและไส้กรองน้ำ",
 };
 
 export const catalogProducts: CatalogProduct[] = [
@@ -59,9 +59,9 @@ export const catalogProducts: CatalogProduct[] = [
   },
   {
     id: "SC-1008",
-    name: "Chemical cleaner SC2",
+    name: "MOTOR CLEANER",
     category: "Chemical",
-    description: "น้ำยาล้างมอเตอร์ แห้งเร็ว ไม่เป็นสื่อนำไฟฟ้า ไม่ทำปฏิกิริยากับพลาสติก วานิช และไม่ติดไฟ",
+    description: "น้ำยาล้างมอเตอร์ และน้ำยาล้างขดลวดมอเตอร์ แห้งเร็ว ไม่เป็นสื่อนำไฟฟ้า ไม่ทำปฏิกิริยากับพลาสติก วานิช และไม่ติดไฟ",
   },
   {
     id: "SC-1009",
@@ -204,6 +204,31 @@ export const catalogProducts: CatalogProduct[] = [
     name: "Silica sand / Filter sand",
     category: "Industrial Water Filters",
     description: "ทรายกรองและกรวด ดักจับตะกอน ความขุ่น และสิ่งแขวนลอยขนาดใหญ่ เช่น เศษดิน โคลน และทราย",
+  },
+  {
+    name: "PP / Sediment filter",
+    category: "Industrial Water Filters",
+    description: "ไส้กรองหยาบ ผลิตจากเส้นใยโพลีโพรพิลีนอัดแน่น ความละเอียดประมาณ 1–10 ไมครอน ดักจับกรวด ทราย ฝุ่นผง ตะกอน และสนิมเหล็ก ควรเปลี่ยนทุก 3–6 เดือน",
+  },
+  {
+    name: "Carbon filter",
+    category: "Industrial Water Filters",
+    description: "ไส้กรองคาร์บอน ทำจากถ่านกัมมันต์ (Activated Carbon) ดูดซับกลิ่น สี คลอรีน และสารอินทรีย์ มีแบบเกล็ด (GAC) ที่น้ำไหลผ่านได้เร็ว และแบบอัดแท่ง (CTO) ที่กรองได้ละเอียดกว่า อายุการใช้งานประมาณ 6–12 เดือน",
+  },
+  {
+    name: "Resin filter",
+    category: "Industrial Water Filters",
+    description: "ไส้กรองเร⁠ซิ่น ใช้หลักการแลกเปลี่ยนประจุไอออนดักจับหินปูน แคลเซียม และแมกนีเซียม ช่วยลดความกระด้างของน้ำ ป้องกันคราบตะกรัน และทำให้น้ำมีรสชาตินุ่มนวลขึ้น อายุการใช้งานประมาณ 6–12 เดือน",
+  },
+  {
+    name: "UF filter (Ultrafiltration)",
+    category: "Industrial Water Filters",
+    description: "ไส้กรองยูเอฟ เยื่อกรองเส้นใยกลวงความละเอียด 0.01 ไมครอน กรองแบคทีเรียและเชื้อโรคขนาดเล็กได้โดยไม่ต้องใช้ไฟฟ้า น้ำที่กรองแล้วยังคงแร่ธาตุที่มีประโยชน์ อายุการใช้งานประมาณ 12–18 เดือน",
+  },
+  {
+    name: "RO membrane (Reverse Osmosis)",
+    category: "Industrial Water Filters",
+    description: "ไส้กรองอาร์โอ เยื่อเมมเบรนที่ละเอียดที่สุดถึง 0.0001 ไมครอน กรองได้ทั้งไวรัส แบคทีเรีย โลหะหนัก สารเคมี และแร่ธาตุออกเกือบทั้งหมด ต้องใช้ปั๊มไฟฟ้าช่วยอัดแรงดันและมีน้ำทิ้ง อายุการใช้งานประมาณ 1–2 ปี",
   },
 ];
 

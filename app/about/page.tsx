@@ -1,32 +1,36 @@
 import type { Metadata } from "next";
-import { CheckCircle, DollarSign, Eye, Infinity, Rocket } from "lucide-react";
+import { BookOpen, Download, Eye, Target, TrendingUp, Users } from "lucide-react";
 import { publicPath } from "@/lib/site-paths";
 
 export const metadata: Metadata = {
   title: "เกี่ยวกับเรา | Savecost Intertrade",
-  description: "รู้จัก Savecost Intertrade ผู้นำเข้าและจัดจำหน่ายอุปกรณ์อุตสาหกรรม ก่อตั้งปี 2015 ดูแลลูกค้ากว่า 30 โรงงานในภาคตะวันออกและกรุงเทพฯ",
+  description: "รู้จัก Savecost Intertrade ผู้จัดจำหน่ายน้ำมันหล่อลื่น จาระบี เคมีภัณฑ์ซ่อมบำรุง และเคมีปรับปรุงคุณภาพน้ำสำหรับโรงงานอุตสาหกรรม ก่อตั้งปี 2015 ดูแลลูกค้ากว่า 30 โรงงานในภาคกลาง ภาคตะวันออกเฉียงเหนือ และภาคตะวันออก",
 };
 
-const missions = ["ให้บริการที่เป็นเลิศด้วยมาตรฐานทางวิศวกรรมระดับสากล", "คัดสรรผลิตภัณฑ์ที่มีคุณภาพและคุ้มค่าที่สุดสำหรับลูกค้า", "พัฒนาบุคลากรให้มีความเชี่ยวชาญอย่างต่อเนื่อง"];
+const goals = [
+  { title: "เป้าหมายดำเนินงาน", text: "พัฒนาความเป็นมืออาชีพ โดยยกระดับการดำเนินงานให้เข้าสู่มาตรฐานสากล" },
+  { title: "เป้าหมายการพัฒนาบุคลากร", text: "พนักงานทั้งหมดจะต้องมีความรู้เรื่องความเป็นมืออาชีพและมาตรฐานสากล" },
+  { title: "เป้าหมายคุณภาพและบริการ", text: "มุ่งเน้น 3 ด้าน คือ คุณภาพสินค้า ราคาต้องประหยัด และคุณภาพการบริการและจัดส่ง" },
+];
 
 const values = [
   {
-    icon: CheckCircle,
-    title: "คุณภาพมาก่อน",
-    en: "Quality First",
-    text: "มุ่งเน้นคุณภาพในทุกกระบวนการทำงานและการคัดสรรผลิตภัณฑ์",
+    icon: BookOpen,
+    title: "ทำในสิ่งที่รู้ รู้ในสิ่งที่ทำ",
+    en: "Know What You Do",
+    text: "เน้นให้พนักงานทุกคนรู้จักศึกษาในรายละเอียดต่าง ๆ ของงานที่ทำ",
   },
   {
-    icon: Infinity,
-    title: "ครบ จบในที่เดียว",
-    en: "One-Stop Service",
-    text: "ตอบโจทย์ทุกความต้องการด้านอุตสาหกรรมในที่เดียวอย่างมีประสิทธิภาพ",
+    icon: TrendingUp,
+    title: "ประสิทธิผลเป็นที่ตั้ง",
+    en: "Results First",
+    text: "มุ่งที่ผลงาน มากกว่าวิธีปฏิบัติ",
   },
   {
-    icon: DollarSign,
-    title: "ช่วยลดต้นทุน",
-    en: "Cost Efficiency",
-    text: "ช่วยลูกค้าลดต้นทุนและเพิ่มผลกำไรด้วยโซลูชันที่ชาญฉลาด",
+    icon: Users,
+    title: "ร่วมด้วยช่วยกัน",
+    en: "Teamwork",
+    text: "มุ่งให้ความสำคัญกับการทำงานเป็นทีม มากกว่าตัวบุคคล",
   },
 ];
 
@@ -66,7 +70,15 @@ export default function AboutPage() {
           <div className="z-10 lg:col-span-6">
             <span className="mb-4 block text-xs font-bold uppercase tracking-[0.2em] text-[#005ea3]">Our Identity</span>
             <h1 className="mb-8 text-6xl font-bold leading-tight max-md:mb-5 max-md:text-4xl md:text-8xl">เกี่ยวกับเรา.</h1>
-            <p className="max-w-xl text-lg leading-relaxed text-slate-600 max-md:text-base max-md:leading-7">บริษัทก่อตั้งในปี 2015 และดูแลลูกค้าไม่ต่ำกว่า 30 โรงงานในภาคกลาง ภาคตะวันออกเฉียงเหนือ และภาคตะวันออก เราจัดจำหน่ายเคมีปรับปรุงคุณภาพน้ำ เคมีภัณฑ์ซ่อมบำรุง สารกรองน้ำ และสินค้าสำหรับอุตสาหกรรมการผลิตแบบครบวงจร</p>
+            <p className="max-w-xl text-lg leading-relaxed text-slate-600 max-md:text-base max-md:leading-7">บริษัทก่อตั้งเมื่อวันที่ 9 กุมภาพันธ์ 2015 และดูแลลูกค้าไม่ต่ำกว่า 30 โรงงานในภาคกลาง ภาคตะวันออกเฉียงเหนือ และภาคตะวันออก เราจัดจำหน่ายน้ำมันและน้ำมันหล่อลื่นเกรดอุตสาหกรรม จาระบี เคมีภัณฑ์สำหรับงานซ่อมบำรุงเครื่องจักรและระบบท่อ สเปรย์สำหรับงานอุตสาหกรรม เคมีปรับปรุงคุณภาพน้ำ และสารกรองน้ำ พร้อมบริการบำรุงรักษาระบบท่อในโรงงาน</p>
+            <a
+              className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#005ea3] px-6 py-4 font-bold text-white shadow-lg transition-colors hover:bg-[#0077cc] max-md:mt-6 max-md:w-full max-md:justify-center"
+              download
+              href={publicPath("/documents/savecost-company-profile.pdf")}
+              target="_blank"
+            >
+              Company Profile <Download size={18} />
+            </a>
           </div>
           <div className="relative h-[500px] max-md:h-80 lg:col-span-6 lg:h-[650px]">
             <div className="absolute inset-0 -rotate-2 rounded-xl bg-slate-100" />
@@ -83,18 +95,22 @@ export default function AboutPage() {
                 <Eye className="text-[#005ea3]" size={32} />
               </div>
               <h2 className="mb-6 text-3xl font-bold max-md:mb-3 max-md:text-2xl">วิสัยทัศน์ <span className="max-md:hidden">(Vision)</span></h2>
-              <p className="text-lg leading-relaxed text-slate-600 max-md:text-base max-md:leading-7">มุ่งสู่การเป็นผู้นำในการให้บริการด้านวิศวกรรมและการจัดหาสินค้าอุตสาหกรรมแบบครบวงจร ที่ได้รับความไว้วางใจจากโรงงานอุตสาหกรรมในระดับภูมิภาค</p>
+              <p className="text-lg leading-relaxed text-slate-600 max-md:text-base max-md:leading-7">มุ่งมั่นในการสร้างความพึงพอใจสูงสุดให้กับผู้ใช้บริการ ด้วยการให้บริการด้วยความซื่อสัตย์ และมีความยินดีที่จะให้บริการอย่างเต็มความสามารถ บนเงื่อนไขของความพยายามที่จะตอบสนองความต้องการของลูกค้า ภายใต้คำขวัญที่ว่า <strong className="font-bold text-[#005ea3]">&quot;คุณภาพคุ้มค่า ราคาเซฟคอส&quot;</strong> นอกจากนี้ยังมุ่งมั่นพัฒนาการบริการโดยคำนึงถึงบุคลากร ชุมชน สิ่งแวดล้อม และผู้มีส่วนได้ส่วนเสียเป็นที่ตั้ง</p>
             </div>
             <div className="rounded-xl bg-white p-12 shadow-sm max-md:p-6 md:p-8 lg:p-12">
               <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-xl bg-slate-200 max-md:mb-4 max-md:h-12 max-md:w-12">
-                <Rocket className="text-slate-700" size={32} />
+                <Target className="text-slate-700" size={32} />
               </div>
-              <h2 className="mb-6 text-3xl font-bold max-md:mb-3 max-md:text-2xl">พันธกิจ <span className="max-md:hidden">(Mission)</span></h2>
+              <h2 className="mb-6 text-3xl font-bold max-md:mb-3 max-md:text-2xl">เป้าหมาย <span className="max-md:hidden">(Goals)</span></h2>
+              <p className="mb-6 text-lg leading-relaxed text-slate-600 max-md:mb-4 max-md:text-base max-md:leading-7"><strong className="font-bold text-[#005ea3]">&quot;คุณภาพคุ้มค่า ราคาเซฟคอส&quot;</strong> คือเป้าหมายหลักที่เรามีต่อลูกค้า ให้ได้สินค้าที่มีคุณภาพ ในราคาที่ช่วยลดต้นทุนได้</p>
               <ul className="space-y-4 text-lg text-slate-600 max-md:space-y-3 max-md:text-base">
-                {missions.map((mission, index) => (
-                  <li className="flex gap-4" key={mission}>
+                {goals.map((goal, index) => (
+                  <li className="flex gap-4" key={goal.title}>
                     <span className="font-bold text-[#005ea3]">{String(index + 1).padStart(2, "0")}</span>
-                    <span>{mission}</span>
+                    <span>
+                      <span className="block font-semibold text-slate-900">{goal.title}</span>
+                      {goal.text}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -111,7 +127,7 @@ export default function AboutPage() {
           </div>
           <div className="relative space-y-10 md:space-y-12">
             <div className="absolute bottom-0 left-5 top-0 w-px bg-slate-300 md:left-1/2" />
-            <Timeline year="2015" text="เริ่มต้นบริษัทเพื่อจัดหาเคมีภัณฑ์และสินค้าซ่อมบำรุงสำหรับโรงงานอุตสาหกรรม" side="left" />
+            <Timeline year="2015" text="ก่อตั้งบริษัทเมื่อวันที่ 9 กุมภาพันธ์ 2015 เพื่อจัดหาเคมีภัณฑ์และสินค้าซ่อมบำรุงสำหรับโรงงานอุตสาหกรรม" side="left" />
             <Timeline year="30+ โรงงาน" text="ขยายฐานลูกค้าในพื้นที่อุตสาหกรรมหลัก ทั้งภาคกลาง ภาคตะวันออกเฉียงเหนือ และภาคตะวันออก" side="right" />
             <Timeline year="ปัจจุบัน" text="ให้บริการแบบครบจบในที่เดียว ทั้งสินค้า คุณภาพ บริการจัดส่ง และการช่วยลดต้นทุน" side="left" />
           </div>
@@ -120,7 +136,8 @@ export default function AboutPage() {
 
       <section className="bg-[#f6f9ff] px-8 py-24 max-md:px-5 max-md:py-14 md:px-12 lg:px-24">
         <div className="mx-auto max-w-screen-2xl">
-          <h2 className="mb-16 text-center text-4xl font-bold max-md:mb-6 max-md:text-left max-md:text-3xl">ค่านิยมหลักของเรา <span className="max-md:hidden">(Core Values)</span></h2>
+          <h2 className="mb-16 text-center text-4xl font-bold max-md:mb-6 max-md:text-left max-md:text-3xl">วัฒนธรรมองค์กร <span className="max-md:hidden">(Our Culture)</span></h2>
+          <p className="mx-auto -mt-10 mb-16 max-w-3xl text-center text-lg text-slate-600 max-md:mx-0 max-md:mt-0 max-md:mb-6 max-md:text-left max-md:text-base">แนวทางที่พนักงานของเซฟคอส อินเตอร์เทรด ยึดถือและปฏิบัติ เปรียบเสมือน &quot;บุคลิกภาพ&quot; และ &quot;จิตวิญญาณ&quot; ขององค์กร</p>
           <div className="grid grid-cols-1 gap-8 max-md:gap-3 md:grid-cols-3 md:gap-4 lg:gap-8">
             {values.map((value) => {
               const Icon = value.icon;

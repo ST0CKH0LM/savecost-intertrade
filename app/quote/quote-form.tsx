@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { AlertCircle, CheckCircle2, FileText, Loader2, PackageSearch, Send } from "lucide-react";
+import { AlertCircle, CheckCircle2, FileText, Loader2, Mail, PackageSearch, Send } from "lucide-react";
 import { catalogProducts, productKey } from "@/lib/catalog";
+import { officeEmail, salesRegions } from "@/lib/contacts";
 import { lineId, lineUrl } from "@/lib/social";
 
-const recipientEmail = "savecost.info@gmail.com";
 // Public Web3Forms access key (safe to expose). Without it the form falls back to a prefilled email.
 const web3formsKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
 
@@ -17,6 +17,8 @@ export function QuoteForm() {
   const itemsRef = useRef<HTMLTextAreaElement>(null);
   const [status, setStatus] = useState<Status>("idle");
   const [mailtoHref, setMailtoHref] = useState("");
+  const [regionValue, setRegionValue] = useState("");
+  const region = salesRegions.find((item) => item.value === regionValue);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -24,12 +26,15 @@ export function QuoteForm() {
     const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
     if (data.botcheck) return;
 
-    const subject = `ขอใบเสนอราคา - ${data.company || data.name}`;
+    const owner = salesRegions.find((item) => item.value === data.region) ?? salesRegions[salesRegions.length - 1];
+    const subject = `[${owner.label} - ${owner.contact}] ขอใบเสนอราคา - ${data.company || data.name}`;
     const body = [
       `ชื่อผู้ติดต่อ: ${data.name}`,
       `บริษัท: ${data.company}`,
       `อีเมล: ${data.email}`,
       `โทรศัพท์: ${data.phone}`,
+      `พื้นที่: ${owner.label}`,
+      `ผู้ดูแล: ${owner.contact} (${owner.email})`,
       "",
       "รายการสินค้า:",
       data.items,
@@ -41,12 +46,20 @@ export function QuoteForm() {
         const response = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
           headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify({ access_key: web3formsKey, subject, from_name: "เว็บไซต์ SaveCost Intertrade", ...data }),
+          body: JSON.stringify({
+            access_key: web3formsKey,
+            subject,
+            from_name: "เว็บไซต์ SaveCost Intertrade",
+            ...data,
+            region: owner.label,
+            sales_contact: `${owner.contact} (${owner.email})`,
+          }),
         });
         const result = await response.json();
         if (result.success) {
           setStatus("sent");
           form.reset();
+          setRegionValue("");
           return;
         }
       } catch {
@@ -54,7 +67,8 @@ export function QuoteForm() {
       }
     }
 
-    const href = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const cc = owner.email === officeEmail ? "" : `&cc=${officeEmail}`;
+    const href = `mailto:${owner.email}?subject=${encodeURIComponent(subject)}${cc}&body=${encodeURIComponent(body)}`;
     setMailtoHref(href);
     setStatus("fallback");
     window.location.href = href;
@@ -85,6 +99,40 @@ export function QuoteForm() {
             <Field label="โทรศัพท์" name="phone" placeholder="+66 8x xxx xxxx" required type="tel" />
           </div>
           <div className="space-y-2">
+            <label className="block text-xs font-bold uppercase tracking-widest text-slate-600" htmlFor="quote-region">
+              พื้นที่ตั้งโรงงาน <span className="text-red-500">*</span>
+            </label>
+            <select
+              className="w-full rounded-md border-none bg-slate-50 p-4 transition-all focus:ring-2 focus:ring-[#005ea3]"
+              id="quote-region"
+              name="region"
+              onChange={(event) => setRegionValue(event.target.value)}
+              required
+              value={regionValue}
+            >
+              <option disabled value="">
+                เลือกภาค
+              </option>
+              {salesRegions.map((item) => (
+                <option key={item.value} value={item.value}>
+                  {item.label}
+                </option>
+              ))}
+            </select>
+            {region && (
+              <div className="flex items-start gap-3 rounded-xl bg-blue-50 p-4 text-slate-700">
+                <Mail className="mt-0.5 flex-shrink-0 text-[#005ea3]" size={20} />
+                <p className="leading-relaxed">
+                  ผู้ดูแลพื้นที่ของคุณ: <span className="font-bold text-slate-900">{region.contact}</span>
+                  <br />
+                  <a className="break-all font-medium text-[#005ea3] underline" href={`mailto:${region.email}`}>
+                    {region.email}
+                  </a>
+                </p>
+              </div>
+            )}
+          </div>
+          <div className="space-y-2">
             <label className="block text-xs font-bold uppercase tracking-widest text-slate-600" htmlFor="quote-items">
               รายการสินค้า <span className="text-red-500">*</span>
             </label>
@@ -113,7 +161,7 @@ export function QuoteForm() {
                 <a className="font-bold underline" href={lineUrl} rel="noopener noreferrer" target="_blank">
                   {lineId}
                 </a>{" "}
-                / โทร <a className="whitespace-nowrap font-bold underline" href="tel:0985241542">098-524-1542</a>
+                / โทร <a className="whitespace-nowrap font-bold underline" href="tel:0818897068">081-889-7068</a>
               </p>
             </div>
           )}

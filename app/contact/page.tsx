@@ -61,12 +61,19 @@ export default function ContactPage() {
               </p>
             </ContactBlock>
             <ContactBlock icon={<Phone className="text-[#005ea3]" size={24} />} title="โทรศัพท์">
-              <p className="font-medium">098-524-1542 | 081-889-7068</p>
+              <p className="font-medium">สำนักงาน 02-748-9516</p>
+              <p className="font-medium">มือถือ 081-889-7068</p>
+              <p className="font-medium">แฟกซ์ 02-117-2236</p>
               <p className="mt-1 text-sm text-slate-500">จันทร์ - ศุกร์, 08:30 - 17:00 น.</p>
             </ContactBlock>
             <ContactBlock icon={<Mail className="text-[#005ea3]" size={24} />} title="อีเมล">
               <p className="font-medium">savecost.info@gmail.com</p>
               <p className="font-medium">savecost.sup@gmail.com</p>
+              <p className="text-sm text-slate-500">ออฟฟิศ</p>
+              <p className="mt-3 font-medium">savecost.sales01@gmail.com</p>
+              <p className="text-sm text-slate-500">คุณมิว · ฝ่ายขายภาคตะวันออก</p>
+              <p className="mt-2 font-medium">savecost.sales02@gmail.com</p>
+              <p className="text-sm text-slate-500">คุณมุก · ฝ่ายขายภาคกลาง</p>
             </ContactBlock>
             <div className="flex gap-6 max-md:gap-4">
               <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-slate-100">
