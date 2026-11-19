@@ -3,11 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import { AlertCircle, CheckCircle2, FileText, Loader2, Mail, PackageSearch, Send } from "lucide-react";
 import { catalogProducts, productKey } from "@/lib/catalog";
-import { officeEmail, salesRegions } from "@/lib/contacts";
+import { salesRegions } from "@/lib/contacts";
+import { sendInquiry } from "@/lib/send-inquiry";
 import { lineId, lineUrl } from "@/lib/social";
-
-// Public Web3Forms access key (safe to expose). Without it the form falls back to a prefilled email.
-const web3formsKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
 
 type Status = "idle" | "sending" | "sent" | "fallback";
 
@@ -26,52 +24,22 @@ export function QuoteForm() {
     const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
     if (data.botcheck) return;
 
-    const owner = salesRegions.find((item) => item.value === data.region) ?? salesRegions[salesRegions.length - 1];
-    const subject = `[${owner.label} - ${owner.contact}] ขอใบเสนอราคา - ${data.company || data.name}`;
-    const body = [
-      `ชื่อผู้ติดต่อ: ${data.name}`,
-      `บริษัท: ${data.company}`,
-      `อีเมล: ${data.email}`,
-      `โทรศัพท์: ${data.phone}`,
-      `พื้นที่: ${owner.label}`,
-      `ผู้ดูแล: ${owner.contact} (${owner.email})`,
-      "",
-      "รายการสินค้า:",
-      data.items,
-    ].join("\n");
-
-    if (web3formsKey) {
-      setStatus("sending");
-      try {
-        const response = await fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify({
-            access_key: web3formsKey,
-            subject,
-            from_name: "เว็บไซต์ SaveCost Intertrade",
-            ...data,
-            region: owner.label,
-            sales_contact: `${owner.contact} (${owner.email})`,
-          }),
-        });
-        const result = await response.json();
-        if (result.success) {
-          setStatus("sent");
-          form.reset();
-          setRegionValue("");
-          return;
-        }
-      } catch {
-        // fall through to the email fallback
-      }
+    setStatus("sending");
+    const result = await sendInquiry({
+      topic: "ขอใบเสนอราคา",
+      title: data.company || data.name,
+      lines: [`ชื่อผู้ติดต่อ: ${data.name}`, `บริษัท: ${data.company}`, `อีเมล: ${data.email}`, `โทรศัพท์: ${data.phone}`, "", "รายการสินค้า:", data.items, ""],
+      data,
+    });
+    if (result.status === "sent") {
+      setStatus("sent");
+      form.reset();
+      setRegionValue("");
+      return;
     }
-
-    const cc = owner.email === officeEmail ? "" : `&cc=${officeEmail}`;
-    const href = `mailto:${owner.email}?subject=${encodeURIComponent(subject)}${cc}&body=${encodeURIComponent(body)}`;
-    setMailtoHref(href);
+    setMailtoHref(result.href);
     setStatus("fallback");
-    window.location.href = href;
+    window.location.href = result.href;
   }
 
   useEffect(() => {

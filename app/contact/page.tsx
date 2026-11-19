@@ -1,125 +1,138 @@
 import type { Metadata } from "next";
-import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Clock, Mail, MapPin, Navigation, Phone, Printer } from "lucide-react";
+import { ContactForm } from "@/components/contact-form";
+import { officeEmail, salesRegions } from "@/lib/contacts";
 import { publicPath } from "@/lib/site-paths";
 import { lineId, lineUrl } from "@/lib/social";
 
 export const metadata: Metadata = {
   title: "ติดต่อเรา | Savecost Intertrade",
-  description: "ติดต่อทีมงาน Savecost Intertrade สอบถามสินค้า บริการ หรือขอใบเสนอราคา ที่อยู่ โทรศัพท์ และอีเมลของบริษัท",
+  description: "ติดต่อ Savecost Intertrade โทร 02-748-9516 แอดไลน์ หรืออีเมลถึงฝ่ายขายประจำภาคตะวันออกและภาคกลาง สอบถามสินค้า ขอใบเสนอราคา หรือนัดสำรวจหน้างาน",
 };
+
+const mapsUrl = "https://maps.app.goo.gl/e3hDofp4pB13HNBJA";
+
+/** Regional salespeople first, then the office for everything else. */
+const team = [
+  ...salesRegions.filter((region) => region.email !== officeEmail).map((region) => ({ name: region.contact, area: region.label, emails: [region.email] })),
+  { name: "ออฟฟิศ", area: "", emails: [officeEmail, "savecost.sup@gmail.com"] },
+];
 
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-7xl px-8 pb-20 pt-36 max-md:px-5 max-md:pb-14 max-md:pt-28">
-      <div className="mb-20 max-md:mb-10">
-        <h1 className="mb-6 text-5xl font-extrabold max-md:text-4xl md:text-7xl">ติดต่อเรา</h1>
-        <p className="max-w-2xl text-lg leading-relaxed text-slate-600 max-md:text-base max-md:leading-7">ติดต่อทีมผู้เชี่ยวชาญด้านวิศวกรรมของเราเพื่อรับโซลูชันอุตสาหกรรมที่เชื่อถือได้ เรายินดีให้บริการเพื่อสนับสนุนการเติบโตของธุรกิจคุณ</p>
-      </div>
-
-      <div className="grid grid-cols-1 items-start gap-16 max-md:gap-10 lg:grid-cols-12">
-        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm sm:p-8 md:p-12 lg:col-span-7">
-          <form action="mailto:savecost.info@gmail.com" className="space-y-8 max-md:space-y-6" encType="text/plain" method="post">
-            <div className="grid grid-cols-1 gap-8 max-md:gap-5 md:grid-cols-2">
-              <div className="space-y-2">
-                <label className="block text-xs font-bold uppercase tracking-widest text-slate-600">ชื่อ-นามสกุล</label>
-                <input className="w-full rounded-md border-none bg-slate-50 p-4 transition-all focus:ring-2 focus:ring-[#005ea3]" name="name" placeholder="สมชาย ใจดี" type="text" />
-              </div>
-              <div className="space-y-2">
-                <label className="block text-xs font-bold uppercase tracking-widest text-slate-600">อีเมล</label>
-                <input className="w-full rounded-md border-none bg-slate-50 p-4 transition-all focus:ring-2 focus:ring-[#005ea3]" name="email" placeholder="somchai@company.com" type="email" />
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <label className="block text-xs font-bold uppercase tracking-widest text-slate-600">ที่อยู่</label>
-              <input className="w-full rounded-md border-none bg-slate-50 p-4 transition-all focus:ring-2 focus:ring-[#005ea3]" name="address" placeholder="ที่อยู่บริษัทหรือสถานที่จัดส่งสินค้า" type="text" />
-            </div>
-
-            <div className="space-y-2">
-              <label className="block text-xs font-bold uppercase tracking-widest text-slate-600">หัวข้อ</label>
-              <input className="w-full rounded-md border-none bg-slate-50 p-4 transition-all focus:ring-2 focus:ring-[#005ea3]" name="subject" placeholder="สอบถามเกี่ยวกับอุปกรณ์อุตสาหกรรม" type="text" />
-            </div>
-
-            <div className="space-y-2">
-              <label className="block text-xs font-bold uppercase tracking-widest text-slate-600">ข้อความ</label>
-              <textarea className="w-full rounded-md border-none bg-slate-50 p-4 transition-all focus:ring-2 focus:ring-[#005ea3]" name="message" placeholder="บอกเราว่าเราสามารถช่วยเหลือโปรเจคของคุณอย่างไร..." rows={6} />
-            </div>
-
-            <button className="w-full rounded-xl bg-gradient-to-br from-[#005ea3] to-[#0077cc] px-10 py-4 font-bold text-white shadow-lg transition-transform hover:scale-[0.98] md:w-auto" type="submit">
-              ส่งข้อความ
-            </button>
-          </form>
-        </div>
-
-        <div className="space-y-12 max-md:space-y-8 lg:col-span-5">
-          <div className="space-y-10 max-md:space-y-6">
-            <ContactBlock icon={<MapPin className="text-[#005ea3]" size={24} />} title="ที่ตั้งสำนักงาน">
-              <p className="font-medium leading-relaxed">
-                146/4 ถนนประชาทร แขวงลาดกระบัง
-                <br />
-                เขตลาดกระบัง กรุงเทพฯ 10520
+    <div className="pb-20 pt-28 max-md:pb-14">
+      {/* Banner with the main contact channels */}
+      <section className="mx-auto mb-16 max-w-7xl px-8 max-md:mb-10 max-md:px-5">
+        <div className="relative overflow-hidden rounded-2xl bg-slate-950 text-white">
+          <img alt="ทีมงาน SaveCost Intertrade ให้บริการที่หน้างานลูกค้า" className="absolute inset-0 h-full w-full object-cover opacity-25" src={publicPath("/images/work/technician-team-service.jpg")} />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/40" />
+          <div className="relative p-12 max-md:p-6">
+            <div>
+              <span className="mb-4 block text-xs font-bold uppercase tracking-[0.24em] text-sky-300">Contact us</span>
+              <h1 className="mb-5 text-6xl font-extrabold max-md:text-4xl">ติดต่อเรา</h1>
+              <p className="max-w-xl text-lg leading-relaxed text-slate-200 max-md:text-base max-md:leading-7">
+                สอบถามสินค้า ขอใบเสนอราคา หรือนัดสำรวจหน้างาน ทีมงานพร้อมช่วยเลือกสินค้าและบริการที่เหมาะกับโรงงานของคุณ
               </p>
-            </ContactBlock>
-            <ContactBlock icon={<Phone className="text-[#005ea3]" size={24} />} title="โทรศัพท์">
-              <p className="font-medium">สำนักงาน 02-748-9516</p>
-              <p className="font-medium">มือถือ 081-889-7068</p>
-              <p className="font-medium">แฟกซ์ 02-117-2236</p>
-              <p className="mt-1 text-sm text-slate-500">จันทร์ - ศุกร์, 08:30 - 17:00 น.</p>
-            </ContactBlock>
-            <ContactBlock icon={<Mail className="text-[#005ea3]" size={24} />} title="อีเมล">
-              <p className="font-medium">savecost.info@gmail.com</p>
-              <p className="font-medium">savecost.sup@gmail.com</p>
-              <p className="text-sm text-slate-500">ออฟฟิศ</p>
-              <p className="mt-3 font-medium">savecost.sales01@gmail.com</p>
-              <p className="text-sm text-slate-500">คุณมิว · ฝ่ายขายภาคตะวันออก</p>
-              <p className="mt-2 font-medium">savecost.sales02@gmail.com</p>
-              <p className="text-sm text-slate-500">คุณมุก · ฝ่ายขายภาคกลาง</p>
-            </ContactBlock>
-            <div className="flex gap-6 max-md:gap-4">
-              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-slate-100">
-                <MessageCircle className="text-[#005ea3]" size={24} />
+              <p className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-slate-300">
+                <Clock className="text-sky-300" size={16} /> เปิดทำการ จันทร์ – ศุกร์ 08:30 – 17:00 น.
+              </p>
+              <div className="mt-8">
+                <Link className="group inline-flex items-center gap-2 rounded-xl bg-[#005ea3] px-6 py-4 font-bold text-white shadow-lg transition-colors hover:bg-[#0077cc] max-md:w-full max-md:justify-center" href="/quote">
+                  ขอใบเสนอราคา
+                  <ArrowRight className="transition-transform group-hover:translate-x-1" size={18} />
+                </Link>
               </div>
-              <div className="flex flex-wrap items-center gap-5">
-                <div>
-                  <h2 className="mb-2 text-sm font-bold uppercase tracking-widest text-slate-600">LINE Official</h2>
-                  <p className="font-medium leading-relaxed">
-                    แอดไลน์คุยกับทีมงานได้โดยตรง
-                    <br />
-                    ไอดีไลน์:{" "}
-                    <a className="font-bold text-[#005ea3] underline-offset-2 hover:underline" href={lineUrl} rel="noopener noreferrer" target="_blank">
-                      {lineId}
-                    </a>
-                  </p>
-                </div>
-                <a aria-label={`แอดไลน์ SaveCost Intertrade (${lineId})`} href={lineUrl} rel="noopener noreferrer" target="_blank">
-                  <img alt={`LINE QR Code ของ Savecost Intertrade (ID: ${lineId})`} className="h-24 w-24 flex-shrink-0 rounded-lg border border-slate-200 object-contain transition-opacity hover:opacity-80" src={publicPath("/images/line-qr.jpg")} />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="group relative overflow-hidden rounded-xl border border-slate-200 shadow-sm">
-            <div className="relative aspect-video overflow-hidden bg-slate-100">
-              <iframe allowFullScreen className="h-full w-full border-0" loading="lazy" referrerPolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=SAVECOST+INTERTRADE+CO.,LTD@13.7268453,100.7300746&z=14&output=embed" title="แผนที่ตั้งสำนักงาน SaveCost Intertrade" />
-              <a className="absolute bottom-4 left-4 rounded-lg bg-white px-4 py-2 text-xs font-bold tracking-tight text-[#005ea3] shadow-md transition-colors hover:bg-[#005ea3] hover:text-white" href="https://maps.app.goo.gl/e3hDofp4pB13HNBJA" rel="noopener noreferrer" target="_blank">
-                VIEW ON GOOGLE MAPS
-              </a>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <section className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-12 px-8 max-md:gap-10 max-md:px-5 lg:grid-cols-12">
+        {/* Who to contact + office details */}
+        <div className="lg:col-span-5">
+          <h2 className="mb-2 text-3xl font-bold max-md:text-2xl">ติดต่อฝ่ายขายตามพื้นที่</h2>
+          <p className="mb-6 text-slate-600">ส่งอีเมลถึงผู้ดูแลพื้นที่ของโรงงานคุณได้โดยตรง</p>
+          <ul className="divide-y divide-slate-200 border-y border-slate-200">
+            {team.map((member) => (
+              <li className="py-5" key={member.name}>
+                <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                  <span className="text-lg font-bold text-slate-900">{member.name}</span>
+                  {member.area && <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-[#005ea3]">{member.area}</span>}
+                </div>
+                <div className="mt-2 grid gap-1">
+                  {member.emails.map((email) => (
+                    <a className="inline-flex w-fit items-center gap-2 break-all text-slate-600 hover:text-[#005ea3]" href={`mailto:${email}`} key={email}>
+                      <Mail className="flex-shrink-0" size={16} /> {email}
+                    </a>
+                  ))}
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          <h2 className="mb-5 mt-12 text-xl font-bold max-md:mt-10">สำนักงาน</h2>
+          <dl className="grid gap-4 text-slate-700">
+            <InfoRow icon={<MapPin size={18} />} label="ที่อยู่">
+              146/4 ถนนประชาทร แขวงลาดกระบัง เขตลาดกระบัง กรุงเทพฯ 10520
+            </InfoRow>
+            <InfoRow icon={<Phone size={18} />} label="โทรศัพท์">
+              <a className="hover:text-[#005ea3]" href="tel:027489516">
+                02-748-9516
+              </a>
+              <span className="text-slate-400"> · </span>
+              <a className="hover:text-[#005ea3]" href="tel:0818897068">
+                081-889-7068
+              </a>
+            </InfoRow>
+            <InfoRow icon={<Printer size={18} />} label="แฟกซ์">
+              02-117-2236
+            </InfoRow>
+          </dl>
+
+          <a className="mt-8 flex w-fit items-center gap-4 rounded-xl border border-slate-200 p-3 pr-6 transition-colors hover:border-[#06c755]" href={lineUrl} rel="noopener noreferrer" target="_blank">
+            <img alt={`LINE QR Code ของ Savecost Intertrade (ID: ${lineId})`} className="h-20 w-20 rounded-lg object-contain" src={publicPath("/images/line-qr.jpg")} />
+            <span className="text-sm leading-relaxed text-slate-600">
+              สแกนเพื่อแอดไลน์
+              <br />
+              ID: <span className="font-bold text-slate-900">{lineId}</span>
+            </span>
+          </a>
+        </div>
+
+        {/* Form */}
+        <div className="rounded-2xl border border-slate-200 bg-white p-10 shadow-sm max-md:p-5 lg:col-span-7">
+          <h2 className="mb-2 text-3xl font-bold max-md:text-2xl">ส่งข้อความถึงเรา</h2>
+          <p className="mb-8 text-slate-600 max-md:mb-6">ข้อความจะถูกส่งถึงผู้ดูแลพื้นที่ที่คุณเลือก</p>
+          <ContactForm />
+        </div>
+      </section>
+
+      {/* Map */}
+      <section className="mx-auto mt-16 max-w-7xl px-8 max-md:mt-12 max-md:px-5">
+        <div className="relative overflow-hidden rounded-2xl border border-slate-200">
+          <iframe allowFullScreen className="h-[420px] w-full border-0 max-md:h-72" loading="lazy" referrerPolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=SAVECOST+INTERTRADE+CO.,LTD@13.7268453,100.7300746&z=14&output=embed" title="แผนที่ตั้งสำนักงาน SaveCost Intertrade" />
+          <div className="absolute left-6 top-6 max-w-xs rounded-xl bg-white p-5 shadow-xl max-md:static max-md:max-w-none max-md:rounded-none max-md:shadow-none">
+            <div className="mb-1 text-xs font-bold uppercase tracking-widest text-[#005ea3]">SaveCost Intertrade</div>
+            <p className="mb-4 font-medium leading-relaxed text-slate-800">146/4 ถนนประชาทร แขวงลาดกระบัง เขตลาดกระบัง กรุงเทพฯ 10520</p>
+            <a className="inline-flex items-center gap-2 rounded-lg bg-[#005ea3] px-4 py-3 text-sm font-bold text-white transition-colors hover:bg-[#0077cc]" href={mapsUrl} rel="noopener noreferrer" target="_blank">
+              <Navigation size={16} /> นำทางด้วย Google Maps
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
 
-function ContactBlock({ children, icon, title }: { children: React.ReactNode; icon: React.ReactNode; title: string }) {
+function InfoRow({ children, icon, label }: { children: React.ReactNode; icon: React.ReactNode; label: string }) {
   return (
-    <div className="flex gap-6 max-md:gap-4">
-      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-slate-100">{icon}</div>
-      <div>
-        <h2 className="mb-2 text-sm font-bold uppercase tracking-widest text-slate-600">{title}</h2>
-        {children}
-      </div>
+    <div className="flex gap-3">
+      <dt className="mt-0.5 flex-shrink-0 text-[#005ea3]" title={label}>
+        {icon}
+        <span className="sr-only">{label}</span>
+      </dt>
+      <dd className="leading-relaxed">{children}</dd>
     </div>
   );
 }
