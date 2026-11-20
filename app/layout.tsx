@@ -43,8 +43,7 @@ const businessJsonLd = {
   image: ogImage,
   logo: `${siteUrl}images/savecost-icon.png`,
   foundingDate: "2015-02-09",
-  telephone: ["+6627489516", "+66818897068"],
-  faxNumber: "+6621172236",
+  telephone: "+66818897068",
   email: "savecost.info@gmail.com",
   address: {
     "@type": "PostalAddress",

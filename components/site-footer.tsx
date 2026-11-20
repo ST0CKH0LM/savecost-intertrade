@@ -6,9 +6,7 @@ import { facebookUrl, lineId, lineUrl } from "@/lib/social";
 import { publicPath } from "@/lib/site-paths";
 
 const phones = [
-  { label: "สำนักงาน", number: "02-748-9516", tel: "027489516" },
-  { label: "มือถือ", number: "081-889-7068", tel: "0818897068" },
-  { label: "แฟกซ์", number: "02-117-2236" },
+  { label: "สำนักงาน", number: "081-889-7068", tel: "0818897068" },
 ];
 
 const emailGroups = [

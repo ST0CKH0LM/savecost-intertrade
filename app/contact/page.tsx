@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Clock, Mail, MapPin, Navigation, Phone, Printer } from "lucide-react";
+import { ArrowRight, Clock, Mail, MapPin, Navigation, Phone } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import { officeEmail, salesRegions } from "@/lib/contacts";
 import { publicPath } from "@/lib/site-paths";
@@ -8,7 +8,7 @@ import { lineId, lineUrl } from "@/lib/social";
 
 export const metadata: Metadata = {
   title: "ติดต่อเรา | Savecost Intertrade",
-  description: "ติดต่อ Savecost Intertrade โทร 02-748-9516 แอดไลน์ หรืออีเมลถึงฝ่ายขายประจำภาคตะวันออกและภาคกลาง สอบถามสินค้า ขอใบเสนอราคา หรือนัดสำรวจหน้างาน",
+  description: "ติดต่อ Savecost Intertrade โทร 081-889-7068 แอดไลน์ หรืออีเมลถึงฝ่ายขายประจำภาคตะวันออกและภาคกลาง สอบถามสินค้า ขอใบเสนอราคา หรือนัดสำรวจหน้างาน",
 };
 
 const mapsUrl = "https://maps.app.goo.gl/e3hDofp4pB13HNBJA";
@@ -77,16 +77,9 @@ export default function ContactPage() {
               146/4 ถนนประชาทร แขวงลาดกระบัง เขตลาดกระบัง กรุงเทพฯ 10520
             </InfoRow>
             <InfoRow icon={<Phone size={18} />} label="โทรศัพท์">
-              <a className="hover:text-[#005ea3]" href="tel:027489516">
-                02-748-9516
-              </a>
-              <span className="text-slate-400"> · </span>
               <a className="hover:text-[#005ea3]" href="tel:0818897068">
                 081-889-7068
               </a>
-            </InfoRow>
-            <InfoRow icon={<Printer size={18} />} label="แฟกซ์">
-              02-117-2236
             </InfoRow>
           </dl>
 

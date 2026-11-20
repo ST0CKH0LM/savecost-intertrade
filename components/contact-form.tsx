@@ -118,8 +118,8 @@ export function ContactForm() {
               {lineId}
             </a>{" "}
             / โทร{" "}
-            <a className="whitespace-nowrap font-bold underline" href="tel:027489516">
-              02-748-9516
+            <a className="whitespace-nowrap font-bold underline" href="tel:0818897068">
+              081-889-7068
             </a>
           </p>
         </div>
